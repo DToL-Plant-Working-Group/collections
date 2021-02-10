@@ -8,10 +8,10 @@ library(taxonlookup)
 #
 
 parser <- ArgumentParser()
-parser$add_argument("-i", "--input", default = "DToL_plant_collections.csv",
+parser$add_argument("-i", "--input", default = "./data/DToL_plant_collections.csv",
                     help="name of the input csv file for collection data [default \"DToL_plant_collections.csv\"]")
 
-parser$add_argument("-c", "--centoids", default = "centoids.csv",
+parser$add_argument("-c", "--centoids", default = "./data/centoids.csv",
                     help="name of the input csv file for county centoids [default \"centoids.csv\"]")
 
 parser$add_argument("-o", "--output", default = "parsed_DToL_plant_collections.csv",
@@ -46,4 +46,4 @@ res <- centoids[data, on = .(county)]
 
 res2 <- add_families_orders(res, res$taxon_name)
 
-fwrite(x = res2, file = paste("./", args$output, sep = ""))
+fwrite(x = res2, file = paste("./data/", args$output, sep = ""))
