@@ -20,7 +20,7 @@ d3.json("https://gist.githubusercontent.com/rveciana/27272a581e975835aaa321ddf81
                 // to get a value that is either negative, positive, or zero.
                 return new Date(b) - new Date(a);
             })
-            .map(d => parse_Date(d))
+            .map(d => parse_Date(d));
         // parse the data to get per-county data points
         const countyArr = d3.rollups(data, v => v.length, d => d.county);
         let countyData = [];
@@ -35,22 +35,22 @@ d3.json("https://gist.githubusercontent.com/rveciana/27272a581e975835aaa321ddf81
                     });
                 }
             }
-        }
+        };
         // self assignment here lazy. This bit finds unique rows in countyData
         countyData = countyData.filter(
             (v, i, a) => a.findIndex(t => JSON.stringify(t) === JSON.stringify(v)) === i
         );
         // generate the land object
-        const land = topojson.feature(ukCounties, ukCounties.objects.UK)
+        const land = topojson.feature(ukCounties, ukCounties.objects.UK);
         // generate the projection for our map
         const projection = d3
             .geoAlbersUk()
-            .translate([width / 2, height / 2])
+            .translate([width / 2, height / 2]);
         // spike length for map
-        const length = d3.scaleLinear([0, d3.max(countyData, d => d.n)], [0, 100])
+        const length = d3.scaleLinear([0, d3.max(countyData, d => d.n)], [0, 100]);
         // spike function
         const plant_spike = (length, width = 7) =>
-            `M${-width / 2},0L0,${-length}L${width / 2},0`
+            `M${-width / 2},0L0,${-length}L${width / 2},0`;
 
         // DATA MANIPULATION
         const noDupCollections = {
@@ -118,7 +118,7 @@ d3.json("https://gist.githubusercontent.com/rveciana/27272a581e975835aaa321ddf81
             Bryophytes: new Set(
                 data.filter(d => d.group === "Bryophytes").map(d => d.family)
             ).size
-        }
+        };
         // BARPLOT DATA & FUNCTIONS
         const familyBarPlotData = Object.assign(
             [
@@ -424,13 +424,13 @@ d3.json("https://gist.githubusercontent.com/rveciana/27272a581e975835aaa321ddf81
         const gy2 = svg.append("g").call(yAxis2);
 
     })
-})
+});
 
 // global definitions
 // width and height
 const width = 700,
     height = 700;
-const margin = { left: 30, right: 20, top: 20, bottom: 50 }
+const margin = { left: 30, right: 20, top: 20, bottom: 50 };
 
 // hardcoded species and family targets
 const phase1FamTarget = { type: "phase1FamTarget", Vascular: 132, Bryophytes: 128 };
@@ -439,12 +439,12 @@ const totalBItargetFamNeo = {
     type: "totalBItargetFamNeo",
     Vascular: 132,
     Bryophytes: 128
-}
+};
 const totalBItargetSpNeo = {
     type: "totalBItargetSpNeo",
     Vascular: 1648,
     Bryophytes: 1098
-}
+};
 
 
 // functions used above
@@ -459,7 +459,7 @@ function parse_Date(date) {
         date
     );
     return `${da}-${mo}-${ye}`;
-}
+};
 
 const addTitle = (g, title, type = 'title') =>
     g
@@ -473,7 +473,7 @@ const addTitle = (g, title, type = 'title') =>
         .attr("font-size", "28px")
         .append('text')
         .attr('class', type)
-        .text(title)
+        .text(title);
 
 const addText = (g, text, type = 'para') =>
     g
@@ -487,4 +487,4 @@ const addText = (g, text, type = 'para') =>
         .append('xhtml:div')
         .style("color", "black")
         .attr('class', type)
-        .html(`<p>${text}</p>`)
+        .html(`<p>${text}</p>`);
