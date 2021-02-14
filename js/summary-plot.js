@@ -478,7 +478,7 @@ const addTitle = (g, title, type = 'title') =>
 const addText = (g, text, type = 'para') =>
     g
         .append("foreignObject")
-        .attr("width", width)
+        .attr("width", width - margin.right)
         .attr("height", height / 6)
         .attr('transform', `translate(${margin.left * 0.5}, ${height * 0.11})`)
         .attr("font-family", "sans-serif")
