@@ -4,7 +4,6 @@ The Darwin Tree of Life repository for an updated interactive chart of sample co
 
 This is what the result looks like as of 14.02.21:
 
-![Alt text](./dtol-plant-group.svg)
 <img src="./dtol-plant-group.svg">
 
 To run an interactive version, go to https://observablehq.com/d/ea10047306c23584, or fire up a local server, e.g.
