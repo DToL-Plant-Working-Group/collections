@@ -2,7 +2,7 @@
 
 The Darwin Tree of Life repository for an updated interactive chart of sample collection progress (which itself is in progress). 
 
-This is what the result looks like as of 14.02.21:
+This is what the result looks like as of 21.02.21:
 
 <img src="./dtol-plant-group.svg">
 
@@ -17,4 +17,4 @@ Then go to http://localhost:8000/ and view results.
 
 ### Map data
 
-Ireland from <a href="https://github.com/deldersveld/topojson/blob/master/countries/ireland/ireland-counties.json">here</a> and UK from <a href="https://gist.githubusercontent.com/rveciana/27272a581e975835aaa321ddf816d726/raw/c40062a328843322208b8e98c2104dc8f6ad5301/uk-counties.json">here</a>
+Ireland from <a href="https://github.com/deldersveld/topojson/blob/master/countries/ireland/ireland-counties.json">here</a> and UK from <a href="https://gist.githubusercontent.com/rveciana/27272a581e975835aaa321ddf816d726/raw/c40062a328843322208b8e98c2104dc8f6ad5301/uk-counties.json">here</a>.
