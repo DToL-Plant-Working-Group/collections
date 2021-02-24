@@ -139,23 +139,6 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                 ).size
             };
             // BARPLOT DATA & FUNCTIONS
-            const familyTargetData = Object.assign(
-                [
-                    {
-                        type: " ",
-                        vascular: noFamiliesCollected.Vascular,
-                        bryophytes: noFamiliesCollected.Bryophytes,
-                        xMax: totalBItargetFamNeo.Vascular + totalBItargetFamNeo.Bryophytes
-                    }
-                ],
-                { columns: ["type", "vascular", "bryophytes", "xMax"] },
-                { yLab: "Number of plant families collected" }
-            );
-            const series = d3
-                .stack()
-                .keys(familyTargetData.columns.slice(1))(familyTargetData)
-                .map(d => (d.forEach(v => (v.key = d.key)), d));
-
             const familyBarPlotData = Object.assign(
                 [
                     {
@@ -165,7 +148,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                         yMax: noFamiliesCollected.Vascular + 10
                     },
                     {
-                        type: "Bryophtye ",
+                        type: "Bryophyte ",
                         value: noFamiliesCollected.Bryophytes,
                         group: "family",
                         yMax: noFamiliesCollected.Bryophytes + 10
@@ -227,10 +210,10 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
             );
 
             // Axes.
-            const x0 = d3
+            x0 = d3
                 .scaleLinear()
-                .domain([0, totalBItargetFamNeo.Vascular + totalBItargetFamNeo.Bryophytes])
-                .range([margin.left, width - margin.right]);
+                .domain([0, totalBItargetFamNeo.Vascular + 10])
+                .range([margin.left + 25, width - margin.right]);
             // FIXME these horrible range definitions...
             const x1 = d3
                 .scaleBand()
@@ -297,9 +280,9 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                             .attr("font-weight", "bold")
                             .text(speciesBarPlotData.xLab)
                     );
-            const y0 = d3
+            y0 = d3
                 .scaleBand()
-                .domain(familyTargetData.map(d => d.type))
+                .domain(familyBarPlotData.filter(d => d.type !== "All ").map(d => d.type))
                 .range([height * 0.19, height * 0.12])
                 .padding(0.1);
             const y1 = d3
@@ -314,12 +297,11 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                 .scaleLinear()
                 .domain([0, speciesBarPlotData[2].yMax])
                 .range([height * 0.45, height * 0.25]);
-            const yAxis0 = g =>
+            yAxis0 = g =>
                 g
                     .attr("class", "yAxis")
-                    .attr("transform", `translate(${margin.left},0)`)
-                    .call(d3.axisLeft(y0))
-                    .call(g => g.select(".tick").remove());
+                    .attr("transform", `translate(${margin.left + 25},0)`)
+                    .call(d3.axisLeft(y0));
             const yAxis1 = g =>
                 g
                     .attr("class", "yAxis")
@@ -378,7 +360,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
 
             // add the title
             const title = svg.append('g');
-            title.append('g').call(addTitle, 'DToL Plant Sampling Group progress', 0.035);
+            title.append('g').call(addTitle, 'DToL Plant Sampling Group Summary', 0.035);
 
             // add the introductory sentences
             const para1 = svg.append('g');
@@ -386,9 +368,9 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                 .append('g')
                 .call(
                     addText,
-                    `This document charts the progress made so far in the collections of plant samples for the DToL project.  Overall, ${noSpecimensCollected.Bryophytes +
-                    noSpecimensCollected.Vascular} specimens have been collected from the ${dateData[dateData.length - 1]
-                    } to ${dateData[0]}.`,
+                    `This document charts the progress made so far in collecting plant samples for the Darwin Tree of Life project. Overall, ${noSpecimensCollected.Bryophytes +
+                    noSpecimensCollected.Vascular} specimens have been collected up until ${dateData[0]
+                    }`,
                     0.04,
                     0.5
                 );
@@ -397,19 +379,43 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
             const bars1 = svg
                 .append("g")
                 .selectAll("rect")
-                .data(series.map(d => d[0]).filter(d => d.key !== "xMax"))
+                .data(familyBarPlotData.filter(d => d.type !== "All "))
                 .join("rect")
                 .style("mix-blend-mode", "multiply")
-                .attr("fill", d => (d.key === "bryophytes" ? "#e5f5e0" : "#a1d99b"))
-                .attr("x", d => x0(d[0]))
-                .attr("y", (d, i) => y0(d.data.type))
-                .attr("width", d => x0(d[1]) - x0(d[0]))
+                .attr("fill", d => (d.type === "Bryophyte " ? "#e5f5e0" : "#a1d99b"))
+                .attr("x", d => x0(0))
+                .attr("y", d => y0(d.type))
+                .attr("width", d => x0(d.value) - x0(0))
                 .attr("height", y0.bandwidth())
                 .append("title")
                 .text(
-                    d => `${d.key.capitalize()}: ${d[1] - d[0]} families
-Total: ${d.data.bryophytes + d.data.vascular}`
+                    d => `${d.type}: ${d.value} families
+Target: ${d.type === "Vascular "
+                            ? familyBarPlotData.vascularLine
+                            : familyBarPlotData.bryophyteLine
+                        }`
                 );
+            // add target lines
+            const vascularTargetLine = svg
+                .append("g")
+                .append("line")
+                .attr("x1", x0(totalBItargetFamNeo.Vascular))
+                .attr("x2", x0(totalBItargetFamNeo.Vascular))
+                .attr("y1", y0("Vascular ") + y0.bandwidth())
+                .attr("y2", y0("Vascular "))
+                .attr("stroke", "red")
+                .attr("stroke-dasharray", 3);
+
+            // add target lines
+            const bryophyteTargetLine = svg
+                .append("g")
+                .append("line")
+                .attr("x1", x0(totalBItargetFamNeo.Bryophytes))
+                .attr("x2", x0(totalBItargetFamNeo.Bryophytes))
+                .attr("y1", y0("Bryophyte ") + y0.bandwidth())
+                .attr("y2", y0("Bryophyte "))
+                .attr("stroke", "red")
+                .attr("stroke-dasharray", 3);
 
             // add the axes for figure 1
             const bars1x = svg.append("g").call(xAxis0);
@@ -421,7 +427,7 @@ Total: ${d.data.bryophytes + d.data.vascular}`
                 .append('g')
                 .call(
                     addText,
-                    `Fig. 1 - the bar shows the current number of plant families collected, split by vascular plants and bryophytes. The target is ${totalBItargetFamNeo.Vascular} for vascular plants, and ${totalBItargetFamNeo.Bryophytes} for bryophytes.`,
+                    `Fig. 1 - the bar shows the current number of plant families collected, split by vascular plants and bryophytes. The target is ${totalBItargetFamNeo.Vascular} for vascular plants, and ${totalBItargetFamNeo.Bryophytes} for bryophytes (red dashes).`,
                     0.19,
                     1.5
                 );
@@ -501,7 +507,7 @@ Total: ${d.data.bryophytes + d.data.vascular}`
             // move the map
             const transX = 0,
                 transY = height * 0.2;
-            const ukCounties_ = svg
+            const _ukCounties = svg
                 .append("g")
                 .selectAll("path")
                 .data(ukLand.features)
@@ -512,7 +518,7 @@ Total: ${d.data.bryophytes + d.data.vascular}`
                 .attr("transform", d => `translate(${transX},${transY})`)
                 .attr("d", path);
 
-            const irelandCounties_ = svg
+            const _irelandCounties = svg
                 .append("g")
                 .selectAll("path")
                 .data(irelandLand.features)

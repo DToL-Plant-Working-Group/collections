@@ -2,11 +2,11 @@
 
 The Darwin Tree of Life repository for an updated interactive chart of sample collection progress (which itself is in progress). 
 
-This is what the result looks like as of 21.02.21:
+This is what the result looks like as of 24.02.21:
 
 <img src="./dtol-plant-group.svg">
 
-To run an interactive version, go to https://observablehq.com/d/ea10047306c23584, or fire up a local server, e.g.
+To run a (minimally) interactive version, go to https://observablehq.com/d/ea10047306c23584, or fire up a local server, e.g.
 
 ```bash
 cd /path/to/this/cloned/github/repo
