@@ -2,7 +2,7 @@
 
 The Darwin Tree of Life repository for an updated interactive chart of sample collection progress (which itself is in progress). 
 
-This is what the result looks like as of 24.02.21:
+This is what the result looks like as of 08.03.21:
 
 <img src="./dtol-plant-group.svg">
 
