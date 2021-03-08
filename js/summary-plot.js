@@ -1,6 +1,7 @@
-// load json of counties
+// load json of counties in UK
 d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
     if (JSONerror) return console.warn(JSONerror);
+    // load the ireland topojson separately
     d3.json("../data/ireland.json").then(function (irelandCounties, JSONerror) {
         if (JSONerror) return console.warn(JSONerror);
         d3.csv("../data/parsed_DToL_plant_collections.csv").then(function (data, CSVerror) {
@@ -22,7 +23,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                     // to get a value that is either negative, positive, or zero.
                     return new Date(b) - new Date(a);
                 })
-                .map(d => parse_Date(d));
+                .map(d => parseDate(d));
             // parse the data to get per-county data points
             const countyArr = d3.rollups(data, v => v.length, d => d.county);
             let countyData = [];
@@ -56,6 +57,8 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                 `M${-width / 2},0L0,${-length}L${width / 2},0`;
 
             // DATA MANIPULATION
+
+            // not used yet.
             const noDupCollections = {
                 type: "noDupCollections",
                 Vascular:
@@ -209,6 +212,34 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                 { xLab: "Species" }
             );
 
+            // genome size data - extract from `data` and format
+            const gs_data = data.map(function (d) {
+                return {
+                    species: d.taxon_name,
+                    genus: d.genus,
+                    family: d.family,
+                    order: d.order,
+                    group: d.group,
+                    _2C: +d.GS_2C,
+                    _1C: +d.GS_1C,
+                    GB: +d.GS_gb
+                };
+            });
+            // for the histogram
+            const bins = Object.assign(
+                d3.bin().thresholds(45)(
+                    gs_data.filter(d => d.GB > 0 && d.GB < 25).map(d => d.GB)
+                ),
+                { x: "Genome size (Gbp)" }
+            );
+            // range of genome size and bins excluded for the figure text
+            const GBRange = {
+                min: d3.min(gs_data.filter(d => d.GB > 0).map(d => d.GB)),
+                max: d3.max(gs_data.filter(d => d.GB > 0).map(d => d.GB))
+            };
+            // I've done 25 gigabases here (otherwise the plot looks crazy...)
+            const excludedBins = gs_data.filter(d => d.GB >= 25);
+
             // Axes.
             x0 = d3
                 .scaleLinear()
@@ -233,14 +264,21 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                 .domain(speciesBarPlotData.map(d => d.type))
                 .range([453.3333333333333 + 50, 453.3333333333333 + 187 + 50])
                 .padding(0.1);
+            const gsx = d3
+                .scaleLinear()
+                .domain([bins[0].x0, bins[bins.length - 1].x1])
+                .range([margin.left, width - margin.right])
+
+            // actual axes
             const xAxis0 = g =>
                 g
-                    .attr("transform", `translate(0,${height * 0.12})`)
+                    .attr("transform", `translate(0,${height * x0consts.low})`)
                     .call(d3.axisTop(x0))
                     .call(g => g.select(".tick:last-of-type text").attr("fill", "red"));
+
             const xAxis1 = g =>
                 g
-                    .attr("transform", `translate(0,${height * 0.45})`)
+                    .attr("transform", `translate(0,${height * x1consts.high})`)
                     .call(d3.axisBottom(x1).tickSizeOuter(0))
                     .call(g =>
                         g
@@ -252,9 +290,10 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                             .attr("font-weight", "bold")
                             .text(familyBarPlotData.xLab)
                     );
+
             const xAxis2 = g =>
                 g
-                    .attr("transform", `translate(0,${height * 0.45})`)
+                    .attr("transform", `translate(0,${height * x1consts.high})`)
                     .call(d3.axisBottom(x2).tickSizeOuter(0))
                     .call(g =>
                         g
@@ -268,7 +307,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                     );
             const xAxis3 = g =>
                 g
-                    .attr("transform", `translate(0,${height * 0.45})`)
+                    .attr("transform", `translate(0,${height * x1consts.high})`)
                     .call(d3.axisBottom(x3).tickSizeOuter(0))
                     .call(g =>
                         g
@@ -280,28 +319,58 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                             .attr("font-weight", "bold")
                             .text(speciesBarPlotData.xLab)
                     );
+
+            const gsAxis = g =>
+                g
+                    .attr("transform", `translate(0,${height * gsconsts.high})`)
+                    .call(d3.axisBottom(gsx).tickSizeOuter(0))
+                    .call(g =>
+                        g.call(g =>
+                            g
+                                .append("text")
+                                .attr("x", width / 2 + margin.left)
+                                .attr("y", 30)
+                                .attr("fill", "currentColor")
+                                .attr("font-weight", "bold")
+                                .attr("text-anchor", "end")
+                                .text(bins.x)
+                        )
+                    );
+
             y0 = d3
                 .scaleBand()
                 .domain(familyBarPlotData.filter(d => d.type !== "All ").map(d => d.type))
-                .range([height * 0.19, height * 0.12])
+                .range([height * x0consts.high, height * x0consts.low])
                 .padding(0.1);
+
             const y1 = d3
                 .scaleLinear()
                 .domain([0, familyBarPlotData[2].yMax])
-                .range([height * 0.45, height * 0.25]);
+                .range([height * x1consts.high, height * x1consts.low]);
+
             const y2 = d3
                 .scaleLinear()
                 .domain([0, genusBarPlotData[2].yMax])
-                .range([height * 0.45, height * 0.25]);
+                .range([height * x1consts.high, height * x1consts.low]);
+
             const y3 = d3
                 .scaleLinear()
                 .domain([0, speciesBarPlotData[2].yMax])
-                .range([height * 0.45, height * 0.25]);
+                .range([height * x1consts.high, height * x1consts.low]);
+
+            const gsy = d3
+                .scaleLinear()
+                .domain([0, d3.max(bins, d => d.length)])
+                .nice()
+                .range([height * gsconsts.high, height * gsconsts.low]);
+
+            // actual axes
             yAxis0 = g =>
                 g
                     .attr("class", "yAxis")
                     .attr("transform", `translate(${margin.left + 25},0)`)
                     .call(d3.axisLeft(y0));
+
             const yAxis1 = g =>
                 g
                     .attr("class", "yAxis")
@@ -317,6 +386,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                             .attr("class", "show-phase1_1")
                             .html(" ")
                     );
+
             const yAxis2 = g =>
                 g
                     .attr("class", "yAxis")
@@ -335,6 +405,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                             .attr("class", "show-phase1_2")
                             .html(" ")
                     );
+
             const yAxis3 = g =>
                 g
                     .attr("class", "yAxis")
@@ -349,6 +420,20 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                             .attr("font-weight", "bold")
                             .attr("class", "show-phase1_3")
                             .html(" ")
+                    );
+
+            const gsyAxis = g =>
+                g
+                    .attr("transform", `translate(${margin.left},0)`)
+                    .call(d3.axisLeft(gsy))
+                    .call(g =>
+                        g
+                            .select(".tick:last-of-type text")
+                            .clone()
+                            .attr("x", 4)
+                            .attr("text-anchor", "start")
+                            .attr("font-weight", "bold")
+                            .text(data.y)
                     );
 
             // make the actual plot
@@ -370,7 +455,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                     addText,
                     `This document charts the progress made so far in collecting plant samples for the Darwin Tree of Life project. Overall, ${noSpecimensCollected.Bryophytes +
                     noSpecimensCollected.Vascular} specimens have been collected up until ${dateData[0]
-                    }`,
+                    }.`,
                     0.04,
                     0.5
                 );
@@ -428,7 +513,7 @@ Target: ${d.type === "Vascular "
                 .call(
                     addText,
                     `Fig. 1 - the bar shows the current number of plant families collected, split by vascular plants and bryophytes. The target is ${totalBItargetFamNeo.Vascular} for vascular plants, and ${totalBItargetFamNeo.Bryophytes} for bryophytes (red dashes).`,
-                    0.19,
+                    0.17,
                     1.5
                 );
 
@@ -495,18 +580,49 @@ Target: ${d.type === "Vascular "
                 .call(
                     addText,
                     `Fig. 2 - bar charts split by family, genus, and species which show the number of taxa collected at each taxonomic level.`,
-                    0.48,
+                    0.42,
                     1.5
                 );
 
             // the c-value distribution would be here, but no data yet...
+            const cvals_hist = svg
+                .append("g")
+                .selectAll("rect")
+                .data(bins)
+                .join("rect")
+                .attr("fill", "#a1d99b")
+                .attr("x", d => gsx(d.x0) + 1)
+                .attr("width", d => Math.max(0, gsx(d.x1) - gsx(d.x0) - 1))
+                .attr("y", d => gsy(d.length))
+                .attr("height", d => gsy(0) - gsy(d.length))
+                .append("title")
+                .text(
+                    d => `${d.x0} - ${d.x1} Gb
+${d.length} species`
+                );
+
+            const cvals_histx = svg.append("g").call(gsAxis);
+            const cvals_histy = svg.append("g").call(gsyAxis);
+
+            const para4 = svg.append('g');
+            para4
+                .append('g')
+                .call(
+                    addText,
+                    `Fig. 3 - the distribution of genome size variation in collected plants. Genomes greater than 25Gb excluded (${excludedBins.length
+                    }). There is currently a ${Math.round(
+                        GBRange.max / GBRange.min
+                    )}-fold variation in genome sizes collected.`,
+                    0.64,
+                    1.5
+                );
 
             // go on to the map
 
             const path = d3.geoPath(projection);
             // move the map
             const transX = 0,
-                transY = height * 0.2;
+                transY = height * 0.31;
             const _ukCounties = svg
                 .append("g")
                 .selectAll("path")
@@ -579,17 +695,17 @@ Target: ${d.type === "Vascular "
                 .selectAll(".legend")
                 .attr(
                     "transform",
-                    d => `translate(${width - margin.right},${height * 0.8})`
+                    d => `translate(${width - margin.right},${height * 0.9})`
                 );
 
             // add the description for figure 3(4)
-            const para4 = svg.append('g');
-            para4
+            const para5 = svg.append('g');
+            para5
                 .append('g')
                 .call(
                     addText,
-                    `Fig. 3 - spike map of Great Britain and Ireland, showing areas where samples have been collected so far.`,
-                    0.87,
+                    `Fig. 4 - spike map of Great Britain and Ireland, showing areas where samples have been collected so far.`,
+                    0.94,
                     1.5
                 );
 
@@ -599,9 +715,10 @@ Target: ${d.type === "Vascular "
                 .call(
                     footNote,
                     `Created by Max Brown, Lucia Campos-Dominguez, and Alex Twyford.`,
-                    0.97,
+                    0.98,
                     1.5
                 );
+
         })
     })
 });
@@ -609,7 +726,7 @@ Target: ${d.type === "Vascular "
 // global definitions
 // width and height
 const width = 700,
-    height = 1400;
+    height = 1800;
 const margin = { left: 30, right: 20, top: 20, bottom: 50 };
 
 // hardcoded species and family targets
@@ -626,10 +743,14 @@ const totalBItargetSpNeo = {
     Bryophytes: 1098
 };
 
+// constants for the y arrangement of 
+const x0consts = { low: 0.09, high: 0.17 };
+const x1consts = { low: 0.21, high: 0.4 };
+const gsconsts = { low: 0.48, high: 0.62 };
 
 // functions used above
 
-function parse_Date(date) {
+function parseDate(date) {
     const dtf = new Intl.DateTimeFormat('en', {
         year: 'numeric',
         month: 'short',
@@ -682,7 +803,3 @@ const footNote = (g, text, hscale, wscale) =>
         .style("color", "grey")
         .attr('class', 'paragraph')
         .html(`<p>${text}</p>`)
-
-String.prototype.capitalize = function () {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
