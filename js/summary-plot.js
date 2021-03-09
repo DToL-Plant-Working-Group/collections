@@ -267,7 +267,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
             const gsx = d3
                 .scaleLinear()
                 .domain([bins[0].x0, bins[bins.length - 1].x1])
-                .range([margin.left, width - margin.right])
+                .range([margin.left, width - margin.right]);
 
             // actual axes
             const xAxis0 = g =>
@@ -774,7 +774,7 @@ const addTitle = (g, title, scale, type = 'title') =>
         .attr("font-size", "28px")
         .append('text')
         .attr('class', type)
-        .text(title)
+        .text(title);
 
 const addText = (g, text, hscale, wscale) =>
     g
@@ -788,7 +788,7 @@ const addText = (g, text, hscale, wscale) =>
         .append('xhtml:div')
         .style("color", "black")
         .attr('class', 'paragraph')
-        .html(`<p>${text}</p>`)
+        .html(`<p>${text}</p>`);
 
 const footNote = (g, text, hscale, wscale) =>
     g
@@ -802,4 +802,4 @@ const footNote = (g, text, hscale, wscale) =>
         .append('xhtml:div')
         .style("color", "grey")
         .attr('class', 'paragraph')
-        .html(`<p>${text}</p>`)
+        .html(`<p>${text}</p>`);
