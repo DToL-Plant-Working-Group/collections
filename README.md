@@ -1,5 +1,11 @@
 # Plant collections data
 
+## Updates
+
+21.03.21 - Attempting to get data remotely from COPO API, and format into a nice CSV.
+
+## Main
+
 The Darwin Tree of Life repository for an updated interactive chart of sample collection progress (which itself is in progress). 
 
 This is what the result looks like as of 08.03.21:
