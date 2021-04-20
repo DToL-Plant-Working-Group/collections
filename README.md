@@ -2,13 +2,27 @@
 
 ## Updates
 
+20.04.21 - Full migration to using COPO as the database. Not as much data on here as in the original data recieved (./data/DToL_plant_collections), especially fewer bryophytes for some reason. Would be great to have an independent take on this.
+
+Data flow looks like this:
+
+Scripts ping COPO API -> return JSON files -> parsed to CSV's -> visualised in `./js/summary-plot.js`
+
+Run the whole pipeline with:
+
+```bash
+bash update_collections_data_COPO.bash
+```
+
+Which takes ~ 1 minute with the current load of data.
+
 21.03.21 - Attempting to get data remotely from COPO API, and format into a nice CSV.
 
 ## Main
 
-The Darwin Tree of Life repository for an updated interactive chart of sample collection progress (which itself is in progress). 
+The Darwin Tree of Life repository for an updated interactive chart of sample collection progress. 
 
-This is what the result looks like as of 08.03.21:
+This is what the result looks like as of 20.04.21:
 
 <img src="./dtol-plant-group.svg">
 
