@@ -37,8 +37,9 @@ node ./merge_jsons.js
 rm ./curl_json_outputs/copo_csv_string*.txt.json
 
 # now to (re)create the DToL_plant_collections.csv
+d=$(date +%Y-%m-%d)
 
-node jsons_to_csv.js ./curl_json_outputs/bryophytes*.json ./curl_json_outputs/angiosperms*.json
+node jsons_to_csv.js ./curl_json_outputs/bryophytes_${d}.json ./curl_json_outputs/angiosperms_${d}.json
 
 # clean-up
 rm ./sample_names.json
