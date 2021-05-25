@@ -3,6 +3,7 @@ library(argparse)
 library(taxonlookup)
 
 parser <- ArgumentParser()
+# defaults are wrong
 parser$add_argument("-i", "--input", default = "./data/DToL_plant_collections_COPO.csv",
                     help="name of the input csv file for collection data [default \"DToL_plant_collections.csv\"]")
 
@@ -39,7 +40,8 @@ res <- centoids[data, on = .(county)]
 res2 <- add_families_orders(res, res$taxon_name)
 
 # some manual curation - Pulvigera = moss, Apopellia = moss
+# requires intervention from time to time?
 res2[genus == "Pulvigera", group := "Bryophytes"]
 res2[genus == "Apopellia", group := "Bryophytes"]
 
-fwrite(x = res2, file = paste("./data/COPO_", args$output, sep = ""))
+fwrite(x = res2, file = paste("./data/COPO_", Sys.Date(), "_", args$output, sep = ""))

@@ -17,6 +17,7 @@ Frullania,Jubulaceae,Undetermined_liverwort_order,Bryophytes,Berwickshire,55.564
 Lepidozia,Lepidoziaceae,Undetermined_liverwort_order,Bryophytes,Berwickshire,55.564137,-2.746408,Jungermanniales,Lepidoziaceae,Lepidozia,Lepidozia reptans,DBELL1472,Berwickshire,55.743356,-2.630054,2020-10-30
 Lophocolea,Lophocoleaceae,Undeter_peristomate_moss,Bryophytes,Berwickshire,55.564137,-2.746408,Jungermanniales,Lophocoleaceae,Lophocolea,Lophocolea bidentata,DBELL1475,Berwickshire,55.743543,-2.630392,2020-10-30
 Lunularia,Lunulariaceae,Undetermined_liverwort_order,Bryophytes,Midlothian,55.907982,-3.087434,Lunulariales,Lunulariaceae,Lunularia,Lunularia cruciata,DBELL1482,Midlothian,55.964093,-3.202813,2020-11-23
+Lunularia,Lunulariaceae,Undetermined_liverwort_order,Bryophytes,Midlothian,55.907982,-3.087434,Lunulariales,Lunulariaceae,Lunularia,Lunularia cruciata,DBELL1482,Midlothian,55.964093,-3.202813,2021-05-17
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Shetland Islands,59.921060375706,-1.29521038503245,Lamiales,Orobanchaceae,Euphrasia,Euphrasia foulaensis,FIH098-1,Shetland Islands,59.51385501,-1.650253991,2019-09-01
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Edinburgh,55.9409962118208,-3.19572693194092,Lamiales,Orobanchaceae,Euphrasia,Euphrasia arctica,BER-1,Edinburgh,56.057022,-2.706443,2019-09-14
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,New Forest,50.997248,-1.328988,Lamiales,Orobanchaceae,Euphrasia,Euphrasia confusa,WHP-1,New Forest,50.811333,-1.715972,2019-09-10
@@ -95,6 +96,14 @@ Melampyrum,Orobanchaceae,Lamiales,Angiosperms,Midlothian,55.907982,-3.087434,Lam
 Sorbus,Rosaceae,Rosales,Angiosperms,Midlothian,55.907982,-3.087434,Rosales,Rosaceae,Sorbus,Sorbus aucuparia,Goodwin1909,Midlothian,55.9652278,-3.20916667,2020-08-13
 Prunella,Lamiaceae,Lamiales,Angiosperms,Midlothian,55.907982,-3.087434,Lamiales,Lamiaceae,Prunella,Prunella vulgaris,Goodwin1917,Midlothian,55.9652278,-3.20916667,2020-08-31
 Fraxinus,Oleaceae,Lamiales,Angiosperms,Midlothian,55.907982,-3.087434,Lamiales,Oleaceae,Fraxinus,Fraxinus excelsior,Goodwin1918,Midlothian,55.9652278,-3.20916667,2020-08-31
+Malus,Rosaceae,Rosales,Angiosperms,"",,,Rosales,Rosaceae,Malus,Malus sylvestris,DD5,"",57.819085,-5.1710936,2016-05-01
+Malus,Rosaceae,Rosales,Angiosperms,"",,,Rosales,Rosaceae,Malus,Malus sylvestris,DD6,"",57.827773,-5.1759008,2016-05-01
+Malus,Rosaceae,Rosales,Angiosperms,"",,,Rosales,Rosaceae,Malus,Malus sylvestris,INV,"",56.248824,-4.6852234,2016-05-01
+Malus,Rosaceae,Rosales,Angiosperms,"",,,Rosales,Rosaceae,Malus,Malus sylvestris,LL2,"",56.161045,-4.6715698,2016-05-01
+Malus,Rosaceae,Rosales,Angiosperms,"",,,Rosales,Rosaceae,Malus,Malus sylvestris,M27,"",56.645743,-3.6994624,2016-05-01
+Malus,Rosaceae,Rosales,Angiosperms,"",,,Rosales,Rosaceae,Malus,Malus sylvestris,M74,"",56.157959,-4.672966,2016-05-01
+Malus,Rosaceae,Rosales,Angiosperms,"",,,Rosales,Rosaceae,Malus,Malus domestica,NOT APPLICABLE,"",51.48452,-0.29476,2021-04-26
+Malus,Rosaceae,Rosales,Angiosperms,"",,,Rosales,Rosaceae,Malus,Malus domestica,NOT APPLICABLE,"",51.48273,-0.2903,2021-04-26
 Brassica,Brassicaceae,Brassicales,Angiosperms,Kent,51.259187,0.72614,Brassicales,Brassicaceae,Brassica,Brassica oleracea,MC 9000,Kent,51.1313,1.3412,2020-08-04
 Ononis,Fabaceae,Fabales,Angiosperms,Kent,51.259187,0.72614,Fabales,Fabaceae,Ononis,Ononis repens,MC 9001,Kent,51.1313,1.3412,2020-08-04
 Orobanche,Orobanchaceae,Lamiales,Angiosperms,Surrey,51.271865,-0.372814,Lamiales,Orobanchaceae,Orobanche,Orobanche hederae,MC 9002,Surrey,51.4821,-0.2876,2020-08-04

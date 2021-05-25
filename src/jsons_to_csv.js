@@ -2,7 +2,10 @@
 
 const fs = require('fs');
 
-let writeStream = fs.createWriteStream('../data/DToL_plant_collections_COPO.csv');
+const d = new Date();
+const formattedDate = d.toISOString().slice(0, 10);
+
+let writeStream = fs.createWriteStream(`../data/DToL_plant_collections_COPO_${formattedDate}.csv`);
 
 writeStream.write('order_copo,family_copo,genus_copo,taxon_name,collector_number,collection_location,latitude_decimal,longitude_decimal,collection_date_verbatim' + '\n', () => {
     // a line was written to stream
@@ -83,7 +86,7 @@ angiosperms.forEach((d, index) => {
 writeStream.end()
 
 writeStream.on('finish', () => {
-    console.log('Data written to ../data/DToL_plant_collections_COPO.csv')
+    console.log(`Data written to ../data/DToL_plant_collections_COPO_${formattedDate}.csv`)
 }).on('error', (err) => {
     console.log(err)
 })

@@ -1,3 +1,5 @@
+// needs to be UPDATED. 25-05-21
+
 // load all the data in a bunch of callbacks
 // load json of counties in UK
 d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {

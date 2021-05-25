@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+# remove old data
+
+# COPO data
+rm ../data/COPO_*
+# google sheet latest collections
+rm ../data/all_*
+# genome sizes
+rm ../data/DTOL_genome_sizes_*
+
+##                                   ##
+# Get the COPO data from the COPO API #
+##                                   ##
+
 # get the DToL sample names
 curl https://copo-project.org/api/sample/dtol/ > ./sample_names.json
 
@@ -43,3 +56,41 @@ node jsons_to_csv.js ./curl_json_outputs/bryophytes_${d}.json ./curl_json_output
 
 # clean-up
 rm ./sample_names.json
+
+##                                      ##
+# Get the data from google sheets (curl) #
+##                                      ##
+
+mkdir google_sheets_data && cd google_sheets_data
+
+# angiosperms
+curl -L "https://docs.google.com/spreadsheets/d/e/2PACX-1vQnttoVuGLAaqVzqaCjb7Qyc7gKgSNCb7INVIDdS8X83S78nZ_szlHcOxpveueKSrDkRzlqmUGWmtHx/pub?gid=0&single=true&output=csv" \
+> vascular_${d}.csv
+# bryophytes
+curl -L "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWzz8Sut3hQFB4DyxYE_wiZZrHB41VXokc8eihEGAOKdMPDhGw2KkJIl-zjAob6oeDcqgri1zcF3d8/pub?gid=0&single=true&output=csv" \
+> bryophytes_${d}.csv
+
+curl -L "https://docs.google.com/spreadsheets/d/e/2PACX-1vSt0R1T3MpoOM6UFNMaT_Q9gR5TYyUZC1wgLqW_6_cH9zzII8ehadrbHX8bpktjTv2_yt_KHaj3x_e1/pub?output=csv" \
+> genome_sizes_${d}.csv
+
+
+# need format to be:
+# group, family, genus, species
+# and filtered to just contain a list of species.
+
+awk -v d="$d" -F ","  'BEGIN {OFS=","} { if ($7 == "yes" || $9 == "yes" || $10 == "yes")  print $1,$2,$3,$3 " "  $4,d}' bryophytes_${d}.csv > bryophytes_${d}_collected.csv
+awk -v d="$d" -F ","  'BEGIN {OFS=","} { if ($7 == "yes" || $9 == "yes" || $10 == "yes")  print $1,$2,$3,$3 " "  $4,d}' vascular_${d}.csv > vascular_${d}_collected.csv
+
+cat vascular_${d}_collected.csv bryophytes_${d}_collected.csv > all_${d}_collected.csv
+
+# prepend headers
+cat <(echo "group,family,genus,species,date") all_${d}_collected.csv > ../data/all_${d}_collected_final.csv
+
+# genome size data wrangling.
+# just need species,GB (which in this dataset is 1C/Gbp)
+
+awk -F ","  'BEGIN {OFS=","} { if ($3 == "DTOL")  print $6 " "  $7,$19}' genome_sizes_${d}.csv > DTOL_genome_sizes_${d}.csv
+cat <(echo "species,GB") DTOL_genome_sizes_${d}.csv > ../data/DTOL_genome_sizes_${d}_final.csv
+
+# clean up all the intermediate files.
+rm all_${d}_collected.csv vascular_${d}.csv bryophytes_${d}.csv genome_sizes_${d}.csv bryophytes_${d}_collected.csv vascular_${d}_collected.csv DTOL_genome_sizes_${d}.csv
