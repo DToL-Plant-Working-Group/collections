@@ -17,3 +17,8 @@ rm DToL_plant_collections_COPO_${d}.csv
 # Rscript ./R/parse_genome_sizes.R
 
 echo "Parsed data in ./data/ folder"
+
+# automatically update the github.
+git add ./data/*
+git commit -m "Update data on $d."
+git push
