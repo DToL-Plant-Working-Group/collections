@@ -44,4 +44,4 @@ res2 <- add_families_orders(res, res$taxon_name)
 res2[genus == "Pulvigera", group := "Bryophytes"]
 res2[genus == "Apopellia", group := "Bryophytes"]
 
-fwrite(x = res2, file = paste("./data/COPO_", Sys.Date(), "_", args$output, sep = ""))
+fwrite(x = res2, file = paste("./data/COPO_", args$output, sep = ""))

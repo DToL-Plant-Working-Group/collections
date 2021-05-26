@@ -12,13 +12,11 @@ Rscript ./R/parse_collections.R --input ./data/DToL_plant_collections_COPO_${d}.
 --centoids ./data/centoids.csv
 
 # remove DToL_plant_collections_COPO_${d}.csv
-rm DToL_plant_collections_COPO_${d}.csv
-
-# Rscript ./R/parse_genome_sizes.R
+rm ./data/DToL_plant_collections_COPO_${d}.csv
 
 echo "Parsed data in ./data/ folder"
 
 # automatically update the github.
-git add ./data/*
+git add .
 git commit -m "Update data on $d."
 git push
