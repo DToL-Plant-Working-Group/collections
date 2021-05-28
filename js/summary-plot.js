@@ -83,6 +83,11 @@ const gsconsts = { low: 0.48, high: 0.62 };
 // load all the data in a bunch of callbacks
 // load json of counties in UK
 
+/*
+* PLOT
+*/
+
+// load data in a series of callbacks
 d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
     if (JSONerror) return console.warn(JSONerror);
     // load the ireland topojson separately

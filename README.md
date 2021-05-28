@@ -2,11 +2,11 @@
 
 ## Updates
 
-25.05.21 - Data about number of species collected now poached from google sheets. The `./js/summary-plot.js` file needs to be updated still, however the Observable plot should be fine. We need to make this public to make the raw github links permanent. Then, lastly, this can be set up as a cron job to pull down data and upload weekly? 
+**27.05.21** - Just about reaching a final(ish) point on this. The repo is now public, and the pipeline seems to work okay.
 
-Any thoughts?
+**25.05.21** - Data about number of species collected now poached from google sheets. The `./js/summary-plot.js` file needs to be updated still, however the Observable plot should be fine. We need to make this public to make the raw github links permanent. Then, lastly, this can be set up as a cron job to pull down data and upload weekly? 
 
-20.04.21 - Full migration to using COPO as the database. Not as much data on here as in the original data recieved (./data/DToL_plant_collections), especially fewer bryophytes for some reason. Would be great to have an independent take on this.
+**20.04.21** - Full migration to using COPO as the database. Not as much data on here as in the original data recieved (./data/DToL_plant_collections), especially fewer bryophytes for some reason. Would be great to have an independent take on this.
 
 Data flow looks like this:
 
@@ -20,7 +20,7 @@ bash update_collections_data_COPO.bash
 
 Which takes ~ 1 minute with the current load of data.
 
-21.03.21 - Attempting to get data remotely from COPO API, and format into a nice CSV.
+**21.03.21** - Attempting to get data remotely from COPO API, and format into a nice CSV.
 
 ## Main
 
