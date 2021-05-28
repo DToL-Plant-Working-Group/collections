@@ -2,7 +2,7 @@
 
 ## Updates
 
-**27.05.21** - Just about reaching a final(ish) point on this. The repo is now public, and the pipeline seems to work okay.
+**27.05.21** - Just about reaching a final(ish) point on this. The repo is now public, and the pipeline seems to work okay. Still working on a cron job.
 
 **25.05.21** - Data about number of species collected now poached from google sheets. The `./js/summary-plot.js` file needs to be updated still, however the Observable plot should be fine. We need to make this public to make the raw github links permanent. Then, lastly, this can be set up as a cron job to pull down data and upload weekly? 
 
@@ -26,7 +26,7 @@ Which takes ~ 1 minute with the current load of data.
 
 The Darwin Tree of Life repository for an updated interactive chart of sample collection progress. 
 
-This is what the result looks like as of 25.05.21:
+This is what the result looks like as of 28.05.21:
 
 <img src="./dtol-plant-group.svg">
 
