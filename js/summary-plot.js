@@ -441,7 +441,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
 
                     const gsy = d3
                         .scaleLinear()
-                        .domain([0, d3.max(bins, d => d.length)])
+                        .domain([0, d3.max(bins, d => d.length) + 5])
                         .nice()
                         .range([height * gsconsts.high, height * gsconsts.low]);
 
