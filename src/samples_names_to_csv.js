@@ -16,7 +16,7 @@ var result = copo_data.reduce((resultArray, item, index) => {
     resultArray[chunkIndex].push(item)
 
     return resultArray
-}, [])
+}, []);
 
 for (let i = 0; i < result.length; i++) {
     fs.writeFile('./copo_strings/copo_csv_string' + i + '.txt', result[i], function (err) {
