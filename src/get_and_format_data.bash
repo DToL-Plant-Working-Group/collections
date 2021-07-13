@@ -57,8 +57,8 @@ node jsons_to_csv.js ./curl_json_outputs/bryophytes_${d}.json ./curl_json_output
 # clean-up
 rm ./sample_names.json
 # QC the bryophyte && angiosperm location information, comment the below lines out.
-rm ./curl_json_outputs/angiosperms_*
-rm ./curl_json_outputs/bryophytes_*
+# rm ./curl_json_outputs/angiosperms_*
+# rm ./curl_json_outputs/bryophytes_*
 
 ##                                      ##
 # Get the data from google sheets (curl) #
