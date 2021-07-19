@@ -21,6 +21,7 @@ const bryophytes = JSON.parse(fs.readFileSync(bryophytes_path, 'utf8'));
 const angiosperms = JSON.parse(fs.readFileSync(angiosperms_path, 'utf8'));
 
 // this will need to be updated as new data comes in.
+// Oxford is going to cause a problem I think...
 const countyRegex = new RegExp(
     'othian|shire|Shetland|New Forest|Surrey|Kent|Trefor|Edinburgh|Dartmoor',
     'g'
