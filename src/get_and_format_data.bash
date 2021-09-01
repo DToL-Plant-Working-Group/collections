@@ -84,7 +84,8 @@ curl -L "https://docs.google.com/spreadsheets/d/e/2PACX-1vSt0R1T3MpoOM6UFNMaT_Q9
 # group, family, genus, species
 # and filtered to just contain a list of species.
 
-awk -v d="$d" -F ","  'BEGIN {OFS=","} { if ($7 == "yes" || $9 == "yes" || $10 == "yes")  print $1,$2,$3,$3 " "  $4,d}' bryophytes_${d}.csv > bryophytes_${d}_collected.csv
+# bryophytes changed columns I think
+awk -v d="$d" -F ","  'BEGIN {OFS=","} { if ($7 == "yes" || $9 == "yes" || $10 == "yes")  print $1,$3,$4,$4 " "  $5,d}' bryophytes_${d}.csv > bryophytes_${d}_collected.csv
 awk -v d="$d" -F ","  'BEGIN {OFS=","} { if ($7 == "yes" || $9 == "yes" || $10 == "yes")  print $1,$2,$3,$3 " "  $4,d}' vascular_${d}.csv > vascular_${d}_collected.csv
 
 cat vascular_${d}_collected.csv bryophytes_${d}_collected.csv > all_${d}_collected.csv
