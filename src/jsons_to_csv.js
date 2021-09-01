@@ -30,13 +30,13 @@ const countyRegex = new RegExp(
 bryophytes.forEach((d, index) => {
     let newLine = []
     // order
-    newLine.push(d.species_list[0].ORDER_OR_GROUP)
+    newLine.push(d.ORDER_OR_GROUP)
     // family
-    newLine.push(d.species_list[0].FAMILY)
+    newLine.push(d.FAMILY)
     // genus 
-    newLine.push(d.species_list[0].GENUS)
+    newLine.push(d.GENUS)
     // species
-    newLine.push(d.species_list[0].SCIENTIFIC_NAME)
+    newLine.push(d.SCIENTIFIC_NAME)
     // collection sample ID
     newLine.push(d.COLLECTOR_SAMPLE_ID)
     // collection location, [0] for first match
@@ -59,13 +59,13 @@ bryophytes.forEach((d, index) => {
 angiosperms.forEach((d, index) => {
     let newLine = []
     // order
-    newLine.push(d.species_list[0].ORDER_OR_GROUP)
+    newLine.push(d.ORDER_OR_GROUP)
     // family
-    newLine.push(d.species_list[0].FAMILY)
+    newLine.push(d.FAMILY)
     // genus 
-    newLine.push(d.species_list[0].GENUS)
+    newLine.push(d.GENUS)
     // species
-    newLine.push(d.species_list[0].SCIENTIFIC_NAME)
+    newLine.push(d.SCIENTIFIC_NAME)
     // collection sample ID
     newLine.push(d.COLLECTOR_SAMPLE_ID)
     // collection location, [0] for first match

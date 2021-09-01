@@ -14,6 +14,7 @@ rm ../data/DTOL_genome_sizes_*
 ##                                   ##
 
 # get the DToL sample names
+# 1.09.21 this works
 curl https://copo-project.org/api/sample/dtol/ > ./sample_names.json
 
 mkdir ./copo_strings
@@ -23,6 +24,8 @@ mkdir ./copo_strings
 # next loop
 # it seems > 200 ID's times out the curl, which is why
 # samples_names_to_csv.js has chunk sizes of 200.
+
+# 1.09.21 this works
 node ./samples_names_to_csv.js
 
 mkdir ./curl_json_outputs

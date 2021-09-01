@@ -11,7 +11,7 @@ const BRYOPHYTE_ORDER_REGEX = /Anthocerotales|Dendrocerotales|Phymatocerotales|N
 (async () => {
     try {
         // Get the files as an array
-        const files = await fs.promises.readdir(json_directory);
+        const files = fs.readdirSync(json_directory).filter(fn => fn.includes('copo_csv_string'));
 
         let init_array = [];
 
@@ -22,6 +22,7 @@ const BRYOPHYTE_ORDER_REGEX = /Anthocerotales|Dendrocerotales|Phymatocerotales|N
 
             init_array.push(data);
         }
+
         // flatten array of arrays
         init_array_flat = init_array.flat();
 
@@ -33,14 +34,11 @@ const BRYOPHYTE_ORDER_REGEX = /Anthocerotales|Dendrocerotales|Phymatocerotales|N
             if (init_array_flat[i] === undefined) {
                 continue;
             }
-            if (!init_array_flat[i].hasOwnProperty('species_list')) {
-                continue;
-            }
             // collect
-            if (init_array_flat[i].species_list[0].ORDER_OR_GROUP.match(ANGIOSPERM_ORDER_REGEX)) {
+            if (init_array_flat[i].ORDER_OR_GROUP.match(ANGIOSPERM_ORDER_REGEX)) {
                 angiosperms.push(init_array_flat[i])
             }
-            if (init_array_flat[i].species_list[0].ORDER_OR_GROUP.match(BRYOPHYTE_ORDER_REGEX)) {
+            if (init_array_flat[i].ORDER_OR_GROUP.match(BRYOPHYTE_ORDER_REGEX)) {
                 bryophytes.push(init_array_flat[i])
             }
         }

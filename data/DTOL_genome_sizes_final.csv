@@ -388,7 +388,7 @@ Prunella vulgaris,0.69
 Malus sylvestris,0.84
 Agrostemma githago,2.25
 Reseda luteola,0.69
-Pyrus cordata,0.74
+Prunus domestica,0.74
 Scabiosa columbaria,1.15
 Malus Domestica 'Brown Snout',0.82
 Malus Domestica 'Blenheim Orange',1.23
@@ -507,7 +507,7 @@ Sparghanium erectum,0.58
 Eryngium  camptestre,0.98
 Kickxia elatine,1.56
 Ulex minor,1.13
-Prunus domestica,0.64
+Pyrus cordata,0.64
 Phyteuma orbiculare,1.28
 Limonium bivervosum,3.57
 Menyanthes trifoliata,1.79
@@ -571,7 +571,7 @@ Lathyrus aphaca,4.76
 Quercus cerris,0.96
 Quercus ilex,1.02
 Nardus stricta,1.95
-Digitaria sanguinosa,1.14
+Digitaria sanguinalis,1.14
 Rosa agrestis,1.45
 Rosa rubiginosa,1.41
 Rosa canina,1.14
@@ -589,7 +589,7 @@ Galium odoratum,0.82
 Agrostis capillaris,3.16
 Festuca heterophylla,5.46
 Agrostis stolonifera,3.24
-Phleum bertolonii,1.62
+Phleum pratense subsp. bertolonii,1.62
 Bromus interruptus,10.33
 Ornithopus perpusillus,0.67
 Polypogon viridis,3.44
@@ -686,3 +686,27 @@ Geranium sanguineum,4.31
 Atriplex littoralis,0.90
 Campanula glomerata,1.79
 Thalictrum minus,1.17
+Blackstonia perfoliata,1.58
+Origanum vulgare,0.80
+Inula conyza,3.83
+Stratiotes aloides,5.38
+Agrimonia eupatoria,2.98
+Achillea millefolium,7.29
+Polystichum setiferum,7.83
+Ruscus aculeatus,11.59
+Hedera hibernica,3.16
+Gunnera  sp. (left),10.97
+Gunnera  sp. (right),11.01
+Verbascum nigrum,0.44
+Lolium perenne,3.29
+Pseudotsuga menziesii,17.80
+Rubus idaeus,0.35
+Lysimachia maritima,1.62
+Triglochin maritima,1.32
+Eriocaulon aquaticum,4.00
+Atriplex praecox,1.79
+Molinia caerulea,1.89
+Cirsium heterophyllum,1.25
+Polystichum lonchitis,6.62
+Cystopteris montana,10.00
+Saxifraga aizoides,1.67
