@@ -170,7 +170,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                                 d.group === "Conifers" || // Gymnosperms
                                 d.group === "Ferns & fern allies" // was Pteridophytes
                         ).length,
-                        Bryophytes: data_.filter((d) => d.group === "Bryophyte").length // was Bryophytes
+                        Bryophytes: data_.filter((d) => d.group === "bryophyte").length // was Bryophytes
                     };
 
                     const noSpeciesCollected = {
@@ -186,7 +186,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                                 .map((d) => d.species)
                         ).size,
                         Bryophytes: new Set(
-                            data_.filter((d) => d.group === "Bryophyte").map((d) => d.species)
+                            data_.filter((d) => d.group === "bryophyte").map((d) => d.species)
                         ).size
                     };
 
@@ -203,7 +203,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                                 .map((d) => d.genus)
                         ).size,
                         Bryophytes: new Set(
-                            data_.filter((d) => d.group === "Bryophyte").map((d) => d.genus)
+                            data_.filter((d) => d.group === "bryophyte").map((d) => d.genus)
                         ).size
                     };
 
@@ -220,7 +220,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                                 .map((d) => d.family)
                         ).size,
                         Bryophytes: new Set(
-                            data_.filter((d) => d.group === "Bryophyte").map((d) => d.family)
+                            data_.filter((d) => d.group === "bryophyte").map((d) => d.family)
                         ).size
                     };
 
