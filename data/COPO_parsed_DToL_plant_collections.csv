@@ -18,6 +18,7 @@ Lepidozia,Lepidoziaceae,Undetermined_liverwort_order,Bryophytes,Berwickshire,55.
 Lophocolea,Lophocoleaceae,Undeter_peristomate_moss,Bryophytes,Berwickshire,55.564137,-2.746408,Jungermanniales,Lophocoleaceae,Lophocolea,Lophocolea bidentata,DBELL1475,Berwickshire,55.743543,-2.630392,2020-10-30
 Lunularia,Lunulariaceae,Undetermined_liverwort_order,Bryophytes,Midlothian,55.907982,-3.087434,Lunulariales,Lunulariaceae,Lunularia,Lunularia cruciata,DBELL1482,Midlothian,55.964093,-3.202813,2020-11-23
 Lunularia,Lunulariaceae,Undetermined_liverwort_order,Bryophytes,Midlothian,55.907982,-3.087434,Lunulariales,Lunulariaceae,Lunularia,Lunularia cruciata,DBELL1482,Midlothian,55.964093,-3.202813,2021-05-17
+Apopellia,,,Bryophytes,Dumfriesshire,,,Pelliales,Pelliaceae,Apopellia,Apopellia endiviifolia,DBELL1518,Dumfriesshire,55.415295,-3.343835,2021-04-22
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Shetland Islands,59.921060375706,-1.29521038503245,Lamiales,Orobanchaceae,Euphrasia,Euphrasia foulaensis,FIH098-1,Shetland Islands,59.51385501,-1.650253991,2019-09-01
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Edinburgh,55.9409962118208,-3.19572693194092,Lamiales,Orobanchaceae,Euphrasia,Euphrasia arctica,BER-1,Edinburgh,56.057022,-2.706443,2019-09-14
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,New Forest,50.997248,-1.328988,Lamiales,Orobanchaceae,Euphrasia,Euphrasia confusa,WHP-1,New Forest,50.811333,-1.715972,2019-09-10
@@ -445,6 +446,11 @@ Artemisia,Asteraceae,Asterales,Angiosperms,"",,,Asterales,Asteraceae,Artemisia,A
 HALIMIONE,,,,"",,,Caryophyllales,Chenopodiaceae,Halimione,HALIMIONE PORTULACOIDES,MC9302,"",50.7704,-0.1478,2021-09-07
 Trifolium,Fabaceae,Fabales,Angiosperms,"",,,Fabales,Fabaceae,Trifolium,Trifolium fragiferum,MC9304,"",50.7704,-0.1478,2021-09-07
 Atriplex,Amaranthaceae,Caryophyllales,Angiosperms,"",,,Caryophyllales,Chenopodiaceae,Atriplex,Atriplex glabriuscula,SM47,"",51.4825,-0.2876,2021-09-07
+Verbascum,Scrophulariaceae,Lamiales,Angiosperms,"",,,Lamiales,Scrophulariaceae,Verbascum,Verbascum thapsus,DMR31,"",56.047885,-2.8332329,2021-06-07
+Daphne,Thymelaeaceae,Malvales,Angiosperms,"",,,Malvales,Thymelaeaceae,Daphne,Daphne laureola,DMR8,"",55.82852,-3.005614,2021-04-29
+Primula,Primulaceae,Ericales,Angiosperms,Royal Botanic Garden Edinburgh,,,Ericales,Primulaceae,Primula,Primula scotica,DMR9,Royal Botanic Garden Edinburgh,55.9671861,-3.20983888,2021-05-07
+Vaccinium,Ericaceae,Ericales,Angiosperms,"",,,Ericales,Ericaceae,Vaccinium,Vaccinium myrtillus,DMR12,"",55.856575,-3.15204167,2021-05-12
+Pedicularis,Orobanchaceae,Lamiales,Angiosperms,"",,,Lamiales,Orobanchaceae,Pedicularis,Pedicularis palustris,DMR43,"",56.016114,-2.8530807,2021-06-14
 Urtica,Urticaceae,Rosales,Angiosperms,Surrey,51.271865,-0.372814,Rosales,Urticaceae,Urtica,Urtica urens,MC 9011,Surrey,51.4725,-0.3035,2020-08-05
 Urtica,Urticaceae,Rosales,Angiosperms,Surrey,51.271865,-0.372814,Rosales,Urticaceae,Urtica,Urtica dioica,MC 9012,Surrey,51.4725,-0.3035,2020-08-05
 Persicaria,Polygonaceae,Caryophyllales,Angiosperms,Surrey,51.271865,-0.372814,Caryophyllales,Polygonaceae,Persicaria,Persicaria maculosa,MC 9013,Surrey,51.4207,-0.3051,2020-08-06
