@@ -98,4 +98,4 @@ res2[genus == "Apopellia", group := "Bryophytes"]
 fwrite(x = res2, file = paste("./data/COPO_", args$output, sep = ""))
 
 # debug
-fwrite(x = res2, file = "./data/DToL_plant_collections_COPO.csv")
+#fwrite(x = res2, file = "./data/DToL_plant_collections_COPO.csv")
