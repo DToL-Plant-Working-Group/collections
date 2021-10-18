@@ -8,6 +8,9 @@ bash ./get_and_format_data.bash
 
 cd ..
 # clean up files using R.
+
+
+
 Rscript ./R/parse_collections.R --input ./data/DToL_plant_collections_COPO_${d}.csv \
 --centoids ./data/centoids.csv
 

@@ -7,7 +7,7 @@ const formattedDate = d.toISOString().slice(0, 10);
 
 let writeStream = fs.createWriteStream(`../data/DToL_plant_collections_COPO_${formattedDate}.csv`);
 
-writeStream.write('order_copo,family_copo,genus_copo,taxon_name,collector_number,collection_location,latitude_decimal,longitude_decimal,collection_date_verbatim' + '\n', () => {
+writeStream.write('order_copo,family_copo,genus_copo,taxon_name,collector_number,latitude_decimal,longitude_decimal,collection_date_verbatim' + '\n', () => {
     // a line was written to stream
 })
 
@@ -22,10 +22,13 @@ const angiosperms = JSON.parse(fs.readFileSync(angiosperms_path, 'utf8'));
 
 // this will need to be updated as new data comes in.
 // Oxford is going to cause a problem I think...
-const countyRegex = new RegExp(
-    'othian|shire|Shetland|New Forest|Surrey|Kent|Trefor|Edinburgh|Dartmoor',
-    'g'
-);
+// const countyRegex = new RegExp(
+//     'othian|shire|Shetland|New Forest|Surrey|Kent|Trefor|Edinburgh|Dartmoor',
+//     'g'
+// );
+
+// got a better idea for the counties.
+
 // bryophytes data
 bryophytes.forEach((d, index) => {
     let newLine = []
@@ -40,9 +43,9 @@ bryophytes.forEach((d, index) => {
     // collection sample ID
     newLine.push(d.COLLECTOR_SAMPLE_ID)
     // collection location, [0] for first match
-    newLine.push(d.COLLECTION_LOCATION.split(" | ").filter(d =>
-        d.match(countyRegex)
-    )[0])
+    // newLine.push(d.COLLECTION_LOCATION.split(" | ").filter(d =>
+    //     d.match(countyRegex)
+    // )[0])
     // lat
     newLine.push(d.DECIMAL_LATITUDE)
     // lon
@@ -69,9 +72,9 @@ angiosperms.forEach((d, index) => {
     // collection sample ID
     newLine.push(d.COLLECTOR_SAMPLE_ID)
     // collection location, [0] for first match
-    newLine.push(d.COLLECTION_LOCATION.split(" | ").filter(d =>
-        d.match(countyRegex)
-    )[0])
+    // newLine.push(d.COLLECTION_LOCATION.split(" | ").filter(d =>
+    //     d.match(countyRegex)
+    // )[0])
     // lat
     newLine.push(d.DECIMAL_LATITUDE)
     // lon
