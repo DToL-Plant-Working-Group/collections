@@ -57,8 +57,10 @@ d=$(date +%Y-%m-%d)
 
 node jsons_to_csv.js ./curl_json_outputs/bryophytes_${d}.json ./curl_json_outputs/angiosperms_${d}.json
 
-# create a text file of counties
-bash convert_lat_long.bash ../data/DToL_plant_collections_COPO_${d}.csv > ../data/lat_lon_county_${d}.tsv
+# create a text file of counties. Sort out these Rust panics.
+printf "Getting county names. May take some time.\n"
+
+bash convert_lat_long.bash ../data/DToL_plant_collections_COPO_${d}.csv > ../data/lat_lon_county.tsv
 
 # clean-up
 rm ./sample_names.json
