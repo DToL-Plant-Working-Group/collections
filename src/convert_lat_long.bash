@@ -1,5 +1,5 @@
 
-cut -d' ' -f6,7 $1 | tail -n +2 | sort | uniq > temp_lat_lons.txt
+cut -d, -f6,7 $1 | tr -s ',' ' ' | tail -n +2 | sort | uniq > temp_lat_lons.txt
 
 ./geodojo_county -f temp_lat_lons.txt
 
