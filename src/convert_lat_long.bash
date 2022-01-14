@@ -3,7 +3,6 @@ cut -d, -f6,7 $1 | tail -n +2 | sort | uniq > temp_lat_lons.txt
 
 ./geodojo_county -f temp_lat_lons.txt
 
-rm temp_lat_lons.txt
 
 # for i in $lat_lon; do
 #     first=$(echo $i | cut -d, -f1)
