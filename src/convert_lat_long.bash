@@ -1,7 +1,7 @@
 
 cut -d, -f6,7 $1 | tr -s ',' ' ' | tail -n +2 | sort | uniq > temp_lat_lons.txt
 
-~/Documents/geodojo_county/target/release/geodojo_county -f temp_lat_lons.txt
+geodojo_county -f temp_lat_lons.txt
 
 
 # for i in $lat_lon; do
