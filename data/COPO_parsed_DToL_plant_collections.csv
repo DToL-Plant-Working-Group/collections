@@ -1,6 +1,8 @@
 genus,family,order,group,county,county_lat,county_lon,order_copo,family_copo,genus_copo,taxon_name,collector_number,latitude_decimal,longitude_decimal,collection_date_verbatim
 ,,,,"",,,,,,,,48.208164,16.228558,
 ,,,,"",,,,,,,,49.959587,-5.207695,
+,,,,Cornwall,50.448118,-5.158114,,,,,,50.201805,-5.41075,
+Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Cornwall,50.448118,-5.158114,Lamiales,Orobanchaceae,Euphrasia,Euphrasia tetraquetra x Euphrasia vigursii,D21-CAR,50.258778,-5.303972,2014-08-15
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Devon,50.720015,-3.803525,Lamiales,Orobanchaceae,Euphrasia,Euphrasia anglica,BED-1,50.5135,-4.113306,2019-09-10
 Artemisia,Asteraceae,Asterales,Angiosperms,"",,,Asterales,Asteraceae,Artemisia,Artemisia maritima,MC9301,50.7704,-0.1478,2021-09-07
 HALIMIONE,,,,"",,,Caryophyllales,Chenopodiaceae,Halimione,HALIMIONE PORTULACOIDES,MC9302,50.7704,-0.1478,2021-09-07
@@ -10,6 +12,11 @@ Beta,Amaranthaceae,Caryophyllales,Angiosperms,"",,,Caryophyllales,Chenopodiaceae
 Tamarix,Tamaricaceae,Caryophyllales,Angiosperms,"",,,Caryophyllales,Tamaricaceae,Tamarix,Tamarix gallica,MC9299,50.8241,-0.3011,2021-09-07
 Salicornia,Amaranthaceae,Caryophyllales,Angiosperms,"",,,Caryophyllales,Chenopodiaceae,Salicornia,Salicornia ramosissima,MC9300,50.8241,-0.3011,2021-09-07
 Frankenia,Frankeniaceae,Caryophyllales,Angiosperms,"",,,Caryophyllales,Frankeniaceae,Frankenia,Frankenia laevis,MC9297,50.825,-0.2959,2021-09-07
+Euphrasia,Orobanchaceae,Lamiales,Angiosperms,East Cornwall,,,Lamiales,Orobanchaceae,Euphrasia,Euphrasia tetraquetra,AT2201,50.84853,-4.55515,2021-07-01
+,,,,West Sussex,50.931384,-0.507295,,,,,,50.89678,-0.8269014,
+,,,,Hampshire,50.997248,-1.328988,,,,,,50.90742,-1.620662,
+,,,,West Sussex,50.931384,-0.507295,,,,,,50.931553,-0.561522,
+Euphrasia,Orobanchaceae,Lamiales,Angiosperms,West Sussex,50.931384,-0.507295,Lamiales,Orobanchaceae,Euphrasia,Euphrasia anglica x Euphrasia nemorosa,E4E0014-1,50.95602,-0.875311,2015-06-01
 Polygala,Polygalaceae,Fabales,Angiosperms,East Sussex,50.952643,0.292389,Fabales,Polygalaceae,Polygala,Polygala amarella,MC9221,51.0677,-0.0902,2021-06-29
 Phyteuma,Campanulaceae,Asterales,Angiosperms,East Sussex,50.952643,0.292389,Asterales,Campanulaceae,Phyteuma,Phyteuma spicatum,MC9222,51.0677,-0.0902,2021-06-29
 Limonium,Plumbaginaceae,Caryophyllales,Angiosperms,East Sussex,50.952643,0.292389,Caryophyllales,Plumbaginaceae,Limonium,Limonium binervosum,MC9223,51.0677,-0.0902,2021-06-29
@@ -24,6 +31,7 @@ Valeriana,Caprifoliaceae,Dipsacales,Angiosperms,East Sussex,50.952643,0.292389,D
 Eryngium,Apiaceae,Apiales,Angiosperms,East Sussex,50.952643,0.292389,Apiales,Apiaceae,Eryngium,Eryngium campestre,MC9220,51.0689,-0.0908,2021-06-29
 Brassica,Brassicaceae,Brassicales,Angiosperms,Kent,51.259187,0.72614,Brassicales,Brassicaceae,Brassica,Brassica oleracea,MC 9000,51.1313,1.3412,2020-08-04
 Ononis,Fabaceae,Fabales,Angiosperms,Kent,51.259187,0.72614,Fabales,Fabaceae,Ononis,Ononis repens,MC 9001,51.1313,1.3412,2020-08-04
+Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Kent,51.259187,0.72614,Lamiales,Orobanchaceae,Euphrasia,Euphrasia pseudokerneri,D16-E4E008-5,51.14415,1.3791149,2015-06-01
 Origanum,Lamiaceae,Lamiales,Angiosperms,Surrey,51.271865,-0.372814,Lamiales,Lamiaceae,Origanum,Origanum vulgare,MC9284,51.2543,-0.3168,2021-08-23
 Inula,Asteraceae,Asterales,Angiosperms,Surrey,51.271865,-0.372814,Asterales,Asteraceae,Inula,Inula conyza,MC9285,51.2543,-0.3168,2021-08-23
 Blackstonia,Gentianaceae,Gentianales,Angiosperms,Surrey,51.271865,-0.372814,Gentianales,Gentianaceae,Blackstonia,Blackstonia perfoliata,MC9283,51.2563,-0.32,2021-08-23
@@ -40,6 +48,7 @@ Malus,Rosaceae,Rosales,Angiosperms,Surrey,51.271865,-0.372814,Rosales,Rosaceae,M
 Malus,Rosaceae,Rosales,Angiosperms,Surrey,51.271865,-0.372814,Rosales,Rosaceae,Malus,Malus domestica,Blenheim Orange,51.309788,-0.47617,2021-05-12
 Malus,Rosaceae,Rosales,Angiosperms,Surrey,51.271865,-0.372814,Rosales,Rosaceae,Malus,Malus domestica,Worcester Pearman,51.309788,-0.47617,2021-05-12
 Malus,Rosaceae,Rosales,Angiosperms,Surrey,51.271865,-0.372814,Rosales,Rosaceae,Malus,Malus domestica,Asmeads Kernel,51.309788,-0.47617,2021-05-12
+,,,,Kent,51.259187,0.72614,,,,,,51.32393,0.19442289,
 Viscum,Santalaceae,Santalales,Angiosperms,Greater London,51.490777,-0.082497,Santalales,Viscaceae,Viscum,Viscum album,MC 9090,51.4061,-0.3319,2020-09-07
 Viscum,Santalaceae,Santalales,Angiosperms,Greater London,51.490777,-0.082497,Santalales,Viscaceae,Viscum,Viscum album,MC9090,51.4061,-0.3319,2021-11-12
 Viscum,Santalaceae,Santalales,Angiosperms,Greater London,51.490777,-0.082497,Santalales,Viscaceae,Viscum,Viscum album,MC9309,51.4061,-0.3319,2022-03-09
@@ -226,6 +235,7 @@ Lathraea,Orobanchaceae,Lamiales,Angiosperms,Surrey,51.271865,-0.372814,Lamiales,
 Adoxa,Adoxaceae,Dipsacales,Angiosperms,Surrey,51.271865,-0.372814,Dipsacales,Adoxaceae,Adoxa,Adoxa moschatellina,MC9133,51.4838,-0.2955,2021-03-22
 Aristolochia,Aristolochiaceae,Piperales,Angiosperms,Surrey,51.271865,-0.372814,Piperales,Aristolochiaceae,Aristolochia,Aristolochia clematitis,MC9233,51.4841,-0.2953,2021-07-20
 Malus,Rosaceae,Rosales,Angiosperms,Surrey,51.271865,-0.372814,Rosales,Rosaceae,Malus,Malus domestica,NOT APPLICABLE,51.48452,-0.29476,2021-04-26
+,,,,Monmouthshire,,,,,,,,51.74159,-2.724257,
 ,,,,Berkshire,51.466427,-1.034214,,,,,,51.75788,-1.327776,
 Quercus,Fagaceae,Fagales,Angiosperms,Berkshire,51.466427,-1.034214,Fagales,Fagaceae,Quercus,Quercus robur,QWW-39,51.758934,-1.325597,2022-04-21
 ,,,,Berkshire,51.466427,-1.034214,,,,,,51.75942,-1.330043,
@@ -311,9 +321,12 @@ Crithmum,Apiaceae,Apiales,Angiosperms,"",,,Apiales,Apiaceae,Crithmum,Crithmum ma
 Crithmum,Apiaceae,Apiales,Angiosperms,"",,,Apiales,Apiaceae,Crithmum,Crithmum maritimum,MC 9050,52.9993,-4.4234,2020-08-21
 Plantago,Plantaginaceae,Lamiales,Angiosperms,"",,,Lamiales,Plantaginaceae,Plantago,Plantago maritima,MC9266,52.9997,-4.428,2021-08-12
 Lobelia,Campanulaceae,Asterales,Angiosperms,Gwynedd,53.034484,-4.196014,Asterales,Campanulaceae,Lobelia,Lobelia dortmanna,MC9251,53.0576,-4.1502,2021-08-12
+,,,,Staffordshire,52.830902,-2.000507,,,,,,53.08045,-1.8017133,
+Euphrasia,Orobanchaceae,Lamiales,Angiosperms,"",,,Lamiales,Orobanchaceae,Euphrasia,Euphrasia micrantha x Euphrasia scottica,E4E0018-4,53.119022,-8.024541,2015-06-01
 Kali,,,,Gwynedd,53.034484,-4.196014,Caryophyllales,Chenopodiaceae,Kali,Kali turgidum,MC9254,53.1435,-4.3833,2021-08-12
 Parnassia,Celastraceae,Celastrales,Angiosperms,Gwynedd,53.034484,-4.196014,Celastrales,Celastraceae,Parnassia,Parnassia palustris,MC8997,53.1471,-4.3641,2021-08-12
 Pyrola,Ericaceae,Ericales,Angiosperms,Gwynedd,53.034484,-4.196014,Ericales,Ericaceae,Pyrola,Pyrola rotundifolia,MC9257,53.1471,-4.3641,2021-08-12
+,,,,Gwynedd,53.034484,-4.196014,,,,,,53.15342,-4.3638387,
 Plantago,Plantaginaceae,Lamiales,Angiosperms,Cheshire,53.226962,-2.576147,Lamiales,Plantaginaceae,Plantago,Plantago lanceolata,CC434_5685,53.27264,-3.04628,2021-07-14
 Lotus,Fabaceae,Fabales,Angiosperms,Cheshire,53.226962,-2.576147,Fabales,Fabaceae,Lotus,Lotus corniculatus,EZ_56_2050,53.27264,-3.04628,2021-07-14
 Sanguisorba,Rosaceae,Rosales,Angiosperms,Cheshire,53.226962,-2.576147,Rosales,Rosaceae,Sanguisorba,Sanguisorba minor,IF950_5775,53.27264,-3.04628,2021-07-14
@@ -323,6 +336,12 @@ Campanula,Campanulaceae,Asterales,Angiosperms,Cheshire,53.226962,-2.576147,Aster
 Succisa,Caprifoliaceae,Dipsacales,Angiosperms,Cheshire,53.226962,-2.576147,Dipsacales,Caprifoliaceae,Succisa,Succisa pratensis,DZ_394_6068,53.27264,-3.04628,2021-07-15
 Thymus,Lamiaceae,Lamiales,Angiosperms,Cheshire,53.226962,-2.576147,Lamiales,Lamiaceae,Thymus,Thymus drucei,IO145_4019,53.27264,-3.04628,2021-07-15
 Potentilla,Rosaceae,Rosales,Angiosperms,Cheshire,53.226962,-2.576147,Rosales,Rosaceae,Potentilla,Potentilla erecta,DA576_4003,53.27264,-3.04628,2021-07-15
+,,,,South Lancashire,,,,,,,,53.540615,-3.0904117,
+Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Westmorland,,,Lamiales,Orobanchaceae,Euphrasia,Euphrasia frigida,E4E0148-4,54.455173,-2.8683448,2015-06-01
+,,,,Cumberland,,,,,,,,54.45991,-3.2152338,
+,,,,Westmorland,,,,,,,,54.501465,-3.006297,
+,,,,Westmorland,,,,,,,,54.503838,-3.0021858,
+Euphrasia,Orobanchaceae,Lamiales,Angiosperms,County Durham,,,Lamiales,Orobanchaceae,Euphrasia,Euphrasia nemorosa,E4E0043-6,54.84181,-1.6034673,2015-06-01
 ,,,,Dumfries and Galloway,55.012952,-4.118686,,,,,,54.992085,-4.513329,
 ,,,,Dumfries and Galloway,55.012952,-4.118686,,,,,,54.992897,-4.51945,
 ,,,,Dumfries and Galloway,55.012952,-4.118686,,,,,,54.993847,-4.519773,
@@ -354,6 +373,7 @@ Nardia,Jungermanniaceae,Undetermined_liverwort_order,Bryophytes,Peeblesshire,55.
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.468235,-3.372515,
 Conocephalum,Conocephalaceae,Undetermined_liverwort_order,Bryophytes,Peeblesshire,55.564137,-2.746408,Marchantiales,Conocephalaceae,Conocephalum,Conocephalum salebrosum,DBELL1496,55.468254,-3.371756,2021-03-12
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.468433,-3.370845,
+,,,,Lanarkshire,55.6208266010381,-3.81479389639492,,,,,,55.483215,-3.606557,
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.600307,-3.319263,
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.600864,-3.321536,
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.63047,-3.2913969,
@@ -510,6 +530,7 @@ Euphrasia,Orobanchaceae,Lamiales,Angiosperms,East Lothian,55.9459201493332,-2.72
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.26666,-4.422704,
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.343616,-4.707631,
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.343796,-4.7078056,
+,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.3724,-4.2655997,
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.471138,-4.314098,
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.522095,-4.275242,
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.52222,-4.276111,
@@ -559,11 +580,24 @@ Malus,Rosaceae,Rosales,Angiosperms,Perthshire,56.3840067264711,-4.08191189462402
 ,,,,Inverness-shire,57.2152315356251,-4.70406899911151,,,,,,56.88984,-5.4700837,
 ,,,,Inverness-shire,57.2152315356251,-4.70406899911151,,,,,,56.89615,-5.4607167,
 Kalmia,Ericaceae,Ericales,Angiosperms,Inverness-shire,57.2152315356251,-4.70406899911151,Ericales,Ericaceae,Kalmia,Kalmia procumbens,DMR23,56.89666,-5.46025,2021-06-01
+,,,,West Ross & Cromarty,,,,,,,,57.152718,-5.220977,
+,,,,East Inverness-shire,,,,,,,,57.17648,-4.796109,
+,,,,East Inverness-shire,,,,,,,,57.178333,-4.795291,
 ,,,,"",,,,,,,,57.21648,-6.0229416,
+,,,,North Aberdeenshire,,,,,,,,57.343582,-1.950148,
+,,,,East Ross & Cromarty,,,,,,,,57.545666,-5.126367,
+,,,,East Ross & Cromarty,,,,,,,,57.571766,-5.216621,
+,,,,East Ross & Cromarty,,,,,,,,57.572926,-5.214464,
+,,,,East Ross & Cromarty,,,,,,,,57.584435,-4.31098,
 ,,,,West Ross & Cromarty,,,,,,,,57.601868,-5.393736,
 ,,,,West Ross & Cromarty,,,,,,,,57.602318,-5.395502,
 ,,,,West Ross & Cromarty,,,,,,,,57.60436,-5.3517523,
 ,,,,West Ross & Cromarty,,,,,,,,57.604935,-5.3583703,
 ,,,,West Ross & Cromarty,,,,,,,,57.606064,-5.388182,
+,,,,East Ross & Cromarty,,,,,,,,57.69432,-4.784465,
 ,,,,West Ross & Cromarty,,,,,,,,57.819084,-5.1710935,
 ,,,,West Ross & Cromarty,,,,,,,,57.827774,-5.175901,
+,,,,West Sutherland,,,,,,,,58.342777,-5.149936,
+,,,,"",,,,,,,,59.138157,-3.3120427,
+,,,,"",,,,,,,,59.513855,-1.650254,
+Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Zetland,,,Lamiales,Orobanchaceae,Euphrasia,Euphrasia marshallii x Euphrasia micrantha,E4E0099-3,60.132645,-2.053932,2015-06-01
