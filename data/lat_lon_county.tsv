@@ -23,6 +23,9 @@
 51.2884	-0.17861	Surrey
 51.309788	-0.47617	Surrey
 51.32393	0.19442289	West Kent
+51.3383	-0.3102	Surrey
+51.3425	-0.3175	Surrey
+51.3494	-0.3129	Surrey
 51.4061	-0.3319	Middlesex
 51.4075	-0.3209	Middlesex
 51.4093	-0.317	Middlesex
@@ -30,10 +33,13 @@
 51.4136	-0.3077	Surrey
 51.415	-0.3051	Surrey
 51.4192	-0.3044	Surrey
+51.4194	-0.3046	Surrey
+51.4198	-0.3032	Surrey
 51.4207	-0.3051	Surrey
 51.4208	-0.3018	Surrey
 51.4209	-0.3049	Surrey
 51.4212	-0.3051	Surrey
+51.4218	-0.3056	Surrey
 51.4224	-0.3057	Surrey
 51.4252	-0.308	Middlesex
 51.4257	-0.3082	Middlesex
@@ -43,6 +49,7 @@
 51.4282	-0.3129	Middlesex
 51.4284	-0.2951	Surrey
 51.4284	-2951	
+51.4287	-0.295	Surrey
 51.429	-0.3148	Middlesex
 51.4293	-0.3072	Surrey
 51.4298	-0.3168	Middlesex
@@ -53,6 +60,9 @@
 51.4326	-0.321	Surrey
 51.4335	-0.325	Middlesex
 51.435	-0.3214	Surrey
+51.4353	-0.3265	Middlesex
+51.4356	-0.3245	Middlesex
+51.4359	-0.3232	Surrey
 51.4359	-0.3254	Middlesex
 51.4361	-0.3215	Surrey
 51.4376	-0.3228	Surrey
@@ -72,13 +82,17 @@
 51.472	-0.2983	Surrey
 51.4725	-0.2945	Surrey
 51.4725	-0.3035	Surrey
+51.4727	-0.3019	Surrey
+51.4733	-0.3066	Surrey
 51.4735	-0.2956	Surrey
 51.4737	-0.2931	Surrey
+51.4737	-0.2933	Surrey
 51.474	-0.2972	Surrey
 51.4741	-0.3053	Surrey
 51.4744	-0.3058	Surrey
 51.475	-0.2955	Surrey
 51.4761	-0.2933	Surrey
+51.4769	-0.3039	Middlesex
 51.477	-0.299	Middlesex
 51.4774	-0.2922	Surrey
 51.4784	-0.2946	Surrey
@@ -89,6 +103,7 @@
 51.4805	-0.2898	Surrey
 51.4805	-0.29	Surrey
 51.4805	-0.2962	Surrey
+51.4807	-0.2906	Surrey
 51.4808	-0.2979	Middlesex
 51.4808	-0.2985	Middlesex
 51.4809	-0.2981	Middlesex
@@ -98,11 +113,13 @@
 51.4817	-0.2883	Surrey
 51.4819	-0.2887	Surrey
 51.4819	-0.2975	Middlesex
+51.48196	-0.287753	Surrey
 51.482	-0.2878	Surrey
 51.482	-0.2879	Surrey
 51.4821	-0.2876	Surrey
 51.4822	-0.2979	Middlesex
 51.4823	-0.2885	Surrey
+51.482304	-0.2881101	Surrey
 51.4824	-0.2975	Middlesex
 51.4825	-0.2876	Surrey
 51.4825	-0.2877	Surrey
@@ -112,10 +129,12 @@
 51.4831	-0.2971	Middlesex
 51.48319	-0.29304	Surrey
 51.4833	-0.2947	Surrey
+51.4833	-0.2968	Middlesex
 51.4834	-0.291	Surrey
 51.4837	-0.293	Surrey
 51.4838	-0.2955	Surrey
 51.4841	-0.2953	Surrey
+51.4845	-0.2906	Surrey
 51.48452	-0.29476	Surrey
 51.74159	-2.724257	Monmouthshire
 51.75788	-1.327776	Berkshire
@@ -235,8 +254,13 @@
 55.468254	-3.371756	Peeblesshire
 55.468433	-3.370845	Peeblesshire
 55.483215	-3.606557	Lanarkshire
+55.599445	-3.3211112	Peeblesshire
+55.599724	-3.3211112	Peeblesshire
 55.600307	-3.319263	Peeblesshire
 55.600864	-3.321536	Peeblesshire
+55.601112	-3.3177779	Peeblesshire
+55.60278	-3.3225	Peeblesshire
+55.603054	-3.3180556	Peeblesshire
 55.63047	-3.2913969	Peeblesshire
 55.658504	-4.6772184	Ayrshire
 55.691677	-3.213138	Peeblesshire
@@ -275,8 +299,10 @@
 55.85515	-2.987308	Midlothian
 55.8553	-3.1556284	Midlothian
 55.855453	-2.9860914	Midlothian
+55.855556	-3.1533334	Midlothian
 55.855923	-2.9860873	Midlothian
 55.856575	-3.1520417	Midlothian
+55.857224	-3.1516666	Midlothian
 55.85728	-2.99525	Midlothian
 55.85763	-2.995792	Midlothian
 55.85799	-2.9866989	Midlothian
