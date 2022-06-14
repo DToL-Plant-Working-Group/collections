@@ -9,5 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - run: |
-          bash ./update_collections_data_COPO.bash
+        with:
+          node-version: "12.19.0"
+      - run: cd ./src
+      - run: rm ../data/COPO_*
+      - run: rm ../data/all_*
+      - run: rm ../data/DTOL_genome_sizes_*
+      - run: curl https://copo-project.org/api/sample/dtol/ > ./sample_names.json
+      - run: mkdir -p ./copo_strings
+      - run: node ./samples_names_to_csv.js
