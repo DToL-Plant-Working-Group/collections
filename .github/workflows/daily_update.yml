@@ -11,11 +11,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "12.19.0"
-      - run: rm -f ./data/COPO_*
-      - run: rm -f ./data/all_*
-      - run: rm -f ./data/DTOL_genome_sizes_*
-      - run: curl https://copo-project.org/api/sample/dtol/ > ./src/sample_names.json
-      - run: |
-          cd ./src &&
-          mkdir -p ./copo_strings &&
-          node ./samples_names_to_csv.js
+      - run:
+          cd ./src && bash ./get_and_format_data.bash
+
+#       - run: rm -f ./data/COPO_*
+#       - run: rm -f ./data/all_*
+#       - run: rm -f ./data/DTOL_genome_sizes_*
+#       - run: curl https://copo-project.org/api/sample/dtol/ > ./src/sample_names.json
+#       - run: |
+#           cd ./src &&
+#           mkdir -p ./copo_strings &&
+#           node ./samples_names_to_csv.js
