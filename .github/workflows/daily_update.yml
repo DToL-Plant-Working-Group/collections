@@ -1,0 +1,12 @@
+name: daily_update
+
+on: [push]
+
+jobs:
+
+  run_main_bash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          bash ./update_collections_data_COPO.bash
