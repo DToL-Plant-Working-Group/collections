@@ -13,6 +13,7 @@ jobs:
           node-version: "12.19.0"
       - run:
           cd ./src && bash ./get_and_format_data.bash
+      - uses: EndBug/add-and-commit@v9
 
 #       - run: rm -f ./data/COPO_*
 #       - run: rm -f ./data/all_*
