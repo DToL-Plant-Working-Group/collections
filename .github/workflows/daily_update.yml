@@ -9,21 +9,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "12.19.0"
-      - run:
-          cd ./src && bash ./get_and_format_data.bash
-      - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: "12.19.0"
+#       - run: |
+#           cd ./src && bash ./get_and_format_data.bash
+#       - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+      - run: echo "d=2022-06-14" >> $GITHUB_ENV
       - run: |
-          cat ../data/DToL_plant_collections_COPO_${d}.csv \
+          cd ${{ env.GITHUB_WORKSPACE }} && \
+          cat ./data/DToL_plant_collections_COPO_${d}.csv \
           | cut -d, -f6,7 $1 \
           | tr -s ',' ' ' \
           | tail -n +2 \
           | sort \
           | uniq \
-          > ../data/temp_lat_lons.txt
-#       - run:
+          > ./data/temp_lat_lons.txt
+#       - run: |
 #           cd ${{ env.RUNNER_TEMP }}
 #           git clone https://github.com/DToL-Plant-Working-Group/lat-lon-to-county
 #           cd lat-lon-to-county
@@ -32,7 +34,8 @@ jobs:
 #             -v ${{ env.GITHUB_WORKSPACE }}:/collections \
 #             lat-lon --file /collections/data/temp_lat_lons.txt > ${{ env.GITHUB_WORKSPACE }}/data/lat_lon_county.tsv
 
-#       - run:
+#       - run: |
+#           cd ${{ env.GITHUB_WORKSPACE }}
 #           docker build -t dtolplantwg .
 #           docker run --rm --user $UID:$GROUPS \
 #             -v ${{ env.GITHUB_WORKSPACE }}:/collections \
