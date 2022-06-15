@@ -9,15 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: "12.19.0"
-#       - run: |
-#           cd ./src && bash ./get_and_format_data.bash
-#       - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
-      - run: echo "d=2022-06-14" >> $GITHUB_ENV
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "12.19.0"
       - run: |
-          curl https://github.com/DToL-Plant-Working-Group/lat-lon-to-county/releases/download/v0.1/geodojo_county-linux \
+          cd ./src && bash ./get_and_format_data.bash
+      - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+      - run: |
+          curl -L https://github.com/DToL-Plant-Working-Group/lat-lon-to-county/releases/download/v0.1/geodojo_county-linux \
           > $RUNNER_TEMP/geodojo_county && \
           chmod a+x $RUNNER_TEMP/geodojo_county
       - run: |
@@ -28,7 +27,8 @@ jobs:
           | tail -n +2 \
           | sort \
           | uniq \
-          | $RUNNER_TEMP/geodojo_county --file - \
+          > $GITHUB_WORKSPACE/data/temp_lat_lons.txt && \
+          $RUNNER_TEMP/geodojo_county --file $GITHUB_WORKSPACE/data/temp_lat_lons.txt \
           > $GITHUB_WORKSPACE/data/lat_lon_county.tsv
 
 #       - run: |
