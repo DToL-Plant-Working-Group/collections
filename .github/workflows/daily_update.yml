@@ -24,14 +24,14 @@ jobs:
           | sort \
           | uniq \
           > ./data/temp_lat_lons.txt
-#       - run: |
-#           cd ${{ env.RUNNER_TEMP }}
-#           git clone https://github.com/DToL-Plant-Working-Group/lat-lon-to-county
-#           cd lat-lon-to-county
-#           docker build -t lat-lon .
-#           docker run --rm --user $UID:$GROUP \
-#             -v ${{ env.GITHUB_WORKSPACE }}:/collections \
-#             lat-lon --file /collections/data/temp_lat_lons.txt > ${{ env.GITHUB_WORKSPACE }}/data/lat_lon_county.tsv
+      - run: |
+          cd ${{ env.RUNNER_TEMP }}
+          git clone https://github.com/DToL-Plant-Working-Group/lat-lon-to-county
+          cd lat-lon-to-county
+          docker build -t lat-lon .
+          docker run --rm --user $UID:$GROUP \
+            -v ${{ env.GITHUB_WORKSPACE }}:/collections \
+            lat-lon --file /collections/data/temp_lat_lons.txt > ${{ env.GITHUB_WORKSPACE }}/data/lat_lon_county.tsv
 
 #       - run: |
 #           cd ${{ env.GITHUB_WORKSPACE }}
