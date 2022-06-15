@@ -17,6 +17,10 @@ jobs:
 #       - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
       - run: echo "d=2022-06-14" >> $GITHUB_ENV
       - run: |
+          curl https://github.com/DToL-Plant-Working-Group/lat-lon-to-county/releases/download/v0.1/geodojo_county-linux \
+          > $RUNNER_TEMP/geodojo_county && \
+          chmod a+x $RUNNER_TEMP/geodojo_county
+      - run: |
           cd $GITHUB_WORKSPACE && \
           cat ./data/DToL_plant_collections_COPO_${d}.csv \
           | cut -d, -f6,7 $1 \
@@ -24,15 +28,8 @@ jobs:
           | tail -n +2 \
           | sort \
           | uniq \
-          > ./data/temp_lat_lons.txt
-      - run: |
-          cd $RUNNER_TEMP &&
-          git clone https://github.com/DToL-Plant-Working-Group/lat-lon-to-county &&
-          cd lat-lon-to-county &&
-          docker build -t lat-lon . &&
-          docker run --rm --user $UID:$GROUP \
-            -v $GITHUB_WORKSPACE:/collections \
-            lat-lon --file /collections/data/temp_lat_lons.txt > $GITHUB_WORKSPACE/data/lat_lon_county.tsv
+          | $RUNNER_TEMP/geodojo_county --file - \
+          > $GITHUB_WORKSPACE/data/lat_lon_county.tsv
 
 #       - run: |
 #           cd ${{ env.GITHUB_WORKSPACE }}
