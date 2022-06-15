@@ -14,7 +14,7 @@ jobs:
           node-version: "12.19.0"
       - run: |
           cd ./src && bash ./get_and_format_data.bash
-      - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+      - run: echo "d=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - run: |
           curl -L https://github.com/DToL-Plant-Working-Group/lat-lon-to-county/releases/download/v0.1/geodojo_county-linux \
           > $RUNNER_TEMP/geodojo_county && \
