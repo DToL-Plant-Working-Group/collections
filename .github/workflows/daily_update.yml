@@ -1,6 +1,6 @@
 name: daily_update
 
-on: [push]
+on: workflow_dispatch
 
 jobs:
 
