@@ -16,24 +16,23 @@ jobs:
 #           cd ./src && bash ./get_and_format_data.bash
 #       - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
       - run: echo "d=2022-06-14" >> $GITHUB_ENV
-      - run: echo $RUNNER_TEMP
-      - run: echo $GITHUB_WORKSPACE
-#       - run: |
-#           cat ./data/DToL_plant_collections_COPO_${d}.csv \
-#           | cut -d, -f6,7 $1 \
-#           | tr -s ',' ' ' \
-#           | tail -n +2 \
-#           | sort \
-#           | uniq \
-#           > ./data/temp_lat_lons.txt
-#       - run: |
-#           cd ${{ env.RUNNER_TEMP }}
-#           git clone https://github.com/DToL-Plant-Working-Group/lat-lon-to-county
-#           cd lat-lon-to-county
-#           docker build -t lat-lon .
-#           docker run --rm --user $UID:$GROUP \
-#             -v ${{ env.GITHUB_WORKSPACE }}:/collections \
-#             lat-lon --file /collections/data/temp_lat_lons.txt > ${{ env.GITHUB_WORKSPACE }}/data/lat_lon_county.tsv
+      - run: |
+          cd $GITHUB_WORKSPACE && \
+          cat ./data/DToL_plant_collections_COPO_${d}.csv \
+          | cut -d, -f6,7 $1 \
+          | tr -s ',' ' ' \
+          | tail -n +2 \
+          | sort \
+          | uniq \
+          > ./data/temp_lat_lons.txt
+      - run: |
+          cd $RUNNER_TEMP
+          git clone https://github.com/DToL-Plant-Working-Group/lat-lon-to-county
+          cd lat-lon-to-county
+          docker build -t lat-lon .
+          docker run --rm --user $UID:$GROUP \
+            -v $GITHUB_WORKSPACE:/collections \
+            lat-lon --file /collections/data/temp_lat_lons.txt > $GITHUB_WORKSPACE/data/lat_lon_county.tsv
 
 #       - run: |
 #           cd ${{ env.GITHUB_WORKSPACE }}
@@ -45,5 +44,5 @@ jobs:
 #             dtolplantwg \
 #             Rscript ./R/parse_collections.R --input ./data/DToL_plant_collections_COPO.csv --centoids ./data/centoids.csv
 
-#       - uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v9
 
