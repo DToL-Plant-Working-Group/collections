@@ -17,7 +17,6 @@ jobs:
 #       - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
       - run: echo "d=2022-06-14" >> $GITHUB_ENV
       - run: |
-          cd ${{ env.GITHUB_WORKSPACE }} && \
           cat ./data/DToL_plant_collections_COPO_${d}.csv \
           | cut -d, -f6,7 $1 \
           | tr -s ',' ' ' \
