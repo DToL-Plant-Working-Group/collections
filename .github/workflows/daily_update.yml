@@ -1,6 +1,7 @@
 name: daily_update
 
-on: [push]
+# on: [push]
+on: workflow_dispatch
 
 jobs:
 
@@ -13,13 +14,32 @@ jobs:
           node-version: "12.19.0"
       - run:
           cd ./src && bash ./get_and_format_data.bash
+      - run: echo "d=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+      - run: |
+          cat ./data/DToL_plant_collections_COPO_${d}.csv \
+          | cut -d, -f6,7 $1 \
+          | tr -s ',' ' ' \
+          | tail -n +2 \
+          | sort \
+          | uniq \
+          > ./data/temp_lat_lons.txt
+      - run:
+          cd ${{ env.RUNNER_TEMP }}
+          git clone https://github.com/DToL-Plant-Working-Group/lat-lon-to-county
+          cd lat-lon-to-county
+          docker build -t lat-lon .
+          docker run --rm --user $UID:$GROUP \
+            -v ${{ env.GITHUB_WORKSPACE }}:/collections \
+            lat-lon --file /collections/data/temp_lat_lons.txt > ${{ env.GITHUB_WORKSPACE }}/data/lat_lon_county.tsv
+
+      - run:
+          docker build -t dtolplantwg .
+          docker run --rm --user $UID:$GROUPS \
+            -v $HOME/collections:/collections \
+            -v $HOME/.local://.local \
+            -w /collections \
+            dtolplantwg \
+            Rscript ./R/parse_collections.R --input ./data/DToL_plant_collections_COPO.csv --centoids ./data/centoids.csv
+
       - uses: EndBug/add-and-commit@v9
 
-#       - run: rm -f ./data/COPO_*
-#       - run: rm -f ./data/all_*
-#       - run: rm -f ./data/DTOL_genome_sizes_*
-#       - run: curl https://copo-project.org/api/sample/dtol/ > ./src/sample_names.json
-#       - run: |
-#           cd ./src &&
-#           mkdir -p ./copo_strings &&
-#           node ./samples_names_to_csv.js
