@@ -17,7 +17,7 @@ rm ../data/DTOL_genome_sizes_*
 # 1.09.21 this works
 curl https://copo-project.org/api/sample/dtol/ > ./sample_names.json
 
-mkdir ./copo_strings
+mkdir -p ./copo_strings
 
 # takes the sample_names.json and
 # creates a comma separated string of ID's to curl in the
@@ -28,7 +28,7 @@ mkdir ./copo_strings
 # 1.09.21 this works
 node ./samples_names_to_csv.js
 
-mkdir ./curl_json_outputs
+mkdir -p ./curl_json_outputs
 
 # ping the copo API as many times as there are files in copo_strings
 # to get the entire DToL database.
@@ -72,7 +72,7 @@ rm ./sample_names.json
 # Get the data from google sheets (curl) #
 ##                                      ##
 
-mkdir google_sheets_data && cd google_sheets_data
+mkdir -p google_sheets_data && cd google_sheets_data
 
 # angiosperms
 curl -L "https://docs.google.com/spreadsheets/d/e/2PACX-1vQnttoVuGLAaqVzqaCjb7Qyc7gKgSNCb7INVIDdS8X83S78nZ_szlHcOxpveueKSrDkRzlqmUGWmtHx/pub?gid=0&single=true&output=csv" \
@@ -96,13 +96,13 @@ awk -v d="$d" -F ","  'BEGIN {OFS=","} { if ($8 == "yes" || $9 == "yes" || $10 =
 cat vascular_${d}_collected.csv bryophytes_${d}_collected.csv > all_${d}_collected.csv
 
 # prepend headers
-cat <(echo "group,family,genus,species,date") all_${d}_collected.csv > ../data/all_collected_final.csv
+cat <(echo "group,family,genus,species,date") all_${d}_collected.csv > ../../data/all_collected_final.csv
 
 # genome size data wrangling.
 # just need species,GB (which in this dataset is 1C/Gbp)
 
 awk -F ","  'BEGIN {OFS=","} { if ($3 == "DTOL")  print $6 " "  $7,$19}' genome_sizes_${d}.csv > DTOL_genome_sizes_${d}.csv
-cat <(echo "species,GB") DTOL_genome_sizes_${d}.csv > ../data/DTOL_genome_sizes_final.csv
+cat <(echo "species,GB") DTOL_genome_sizes_${d}.csv > ../../data/DTOL_genome_sizes_final.csv
 
 # clean up all the intermediate files.
 rm all_${d}_collected.csv vascular_${d}.csv bryophytes_${d}.csv genome_sizes_${d}.csv bryophytes_${d}_collected.csv vascular_${d}_collected.csv DTOL_genome_sizes_${d}.csv

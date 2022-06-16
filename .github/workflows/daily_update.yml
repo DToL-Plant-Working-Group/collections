@@ -1,25 +1,50 @@
 name: daily_update
 
-on: workflow_dispatch
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 20 * * *'
 
 jobs:
 
   run_main_bash:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: "12.19.0"
-      - run:
+      - run: |
           cd ./src && bash ./get_and_format_data.bash
+      - run: echo "d=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+      - run: |
+          curl -L https://github.com/DToL-Plant-Working-Group/lat-lon-to-county/releases/download/v0.1/geodojo_county-linux \
+          > $RUNNER_TEMP/geodojo_county && \
+          chmod a+x $RUNNER_TEMP/geodojo_county
+      - run: |
+          cd $GITHUB_WORKSPACE && \
+          cat ./data/DToL_plant_collections_COPO_${d}.csv \
+          | cut -d, -f6,7 $1 \
+          | tr -s ',' ' ' \
+          | tail -n +2 \
+          | sort \
+          | uniq \
+          > $GITHUB_WORKSPACE/data/temp_lat_lons.txt && \
+          $RUNNER_TEMP/geodojo_county --file $GITHUB_WORKSPACE/data/temp_lat_lons.txt \
+          > $GITHUB_WORKSPACE/data/lat_lon_county.tsv
+
+      - run: |
+          cd $GITHUB_WORKSPACE
+          docker build -t dtolplantwg R
+          docker run --rm --user $UID:$GROUPS \
+            -v $GITHUB_WORKSPACE:/collections \
+            -v $HOME/.local://.local \
+            -w /collections \
+            dtolplantwg \
+            Rscript ./R/parse_collections.R \
+              --lat_lon_data ./data/lat_lon_county.tsv \
+              --input ./data/DToL_plant_collections_COPO_${d}.csv \
+              --centoids ./data/centoids.csv
+
       - uses: EndBug/add-and-commit@v9
 
-#       - run: rm -f ./data/COPO_*
-#       - run: rm -f ./data/all_*
-#       - run: rm -f ./data/DTOL_genome_sizes_*
-#       - run: curl https://copo-project.org/api/sample/dtol/ > ./src/sample_names.json
-#       - run: |
-#           cd ./src &&
-#           mkdir -p ./copo_strings &&
-#           node ./samples_names_to_csv.js
