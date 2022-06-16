@@ -96,13 +96,13 @@ awk -v d="$d" -F ","  'BEGIN {OFS=","} { if ($8 == "yes" || $9 == "yes" || $10 =
 cat vascular_${d}_collected.csv bryophytes_${d}_collected.csv > all_${d}_collected.csv
 
 # prepend headers
-cat <(echo "group,family,genus,species,date") all_${d}_collected.csv > ../data/all_collected_final.csv
+cat <(echo "group,family,genus,species,date") all_${d}_collected.csv > ../../data/all_collected_final.csv
 
 # genome size data wrangling.
 # just need species,GB (which in this dataset is 1C/Gbp)
 
 awk -F ","  'BEGIN {OFS=","} { if ($3 == "DTOL")  print $6 " "  $7,$19}' genome_sizes_${d}.csv > DTOL_genome_sizes_${d}.csv
-cat <(echo "species,GB") DTOL_genome_sizes_${d}.csv > ../data/DTOL_genome_sizes_final.csv
+cat <(echo "species,GB") DTOL_genome_sizes_${d}.csv > ../../data/DTOL_genome_sizes_final.csv
 
 # # clean up all the intermediate files.
 # rm all_${d}_collected.csv vascular_${d}.csv bryophytes_${d}.csv genome_sizes_${d}.csv bryophytes_${d}_collected.csv vascular_${d}_collected.csv DTOL_genome_sizes_${d}.csv
