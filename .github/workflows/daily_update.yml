@@ -1,12 +1,11 @@
 name: daily_update
 
 on: [push]
-# on: workflow_dispatch
 
 jobs:
 
   run_main_bash:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -39,7 +38,10 @@ jobs:
             -v $HOME/.local://.local \
             -w /collections \
             dtolplantwg \
-            Rscript ./R/parse_collections.R --input ./data/DToL_plant_collections_COPO.csv --centoids ./data/centoids.csv
+            Rscript ./R/parse_collections.R \
+              --lat_lon_data /data/lat_lon_county.tsv \
+              --input ./data/DToL_plant_collections_COPO_${d}.csv \
+              --centoids ./data/centoids.csv
 
       - uses: EndBug/add-and-commit@v9
 
