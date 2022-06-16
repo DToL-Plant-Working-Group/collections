@@ -2,12 +2,12 @@
 
 # remove old data
 
-# COPO data
-rm ../data/COPO_*
-# google sheet latest collections
-rm ../data/all_*
-# genome sizes
-rm ../data/DTOL_genome_sizes_*
+# # COPO data
+# rm ../data/COPO_*
+# # google sheet latest collections
+# rm ../data/all_*
+# # genome sizes
+# rm ../data/DTOL_genome_sizes_*
 
 ##                                   ##
 # Get the COPO data from the COPO API #
@@ -17,7 +17,7 @@ rm ../data/DTOL_genome_sizes_*
 # 1.09.21 this works
 curl https://copo-project.org/api/sample/dtol/ > ./sample_names.json
 
-mkdir ./copo_strings
+mkdir -p ./copo_strings
 
 # takes the sample_names.json and
 # creates a comma separated string of ID's to curl in the
@@ -28,7 +28,7 @@ mkdir ./copo_strings
 # 1.09.21 this works
 node ./samples_names_to_csv.js
 
-mkdir ./curl_json_outputs
+mkdir -p ./curl_json_outputs
 
 # ping the copo API as many times as there are files in copo_strings
 # to get the entire DToL database.
@@ -49,8 +49,8 @@ rm ./copo_strings/copo_csv_string*.txt
 
 node ./merge_jsons.js
 
-# remove all the intermediate files.
-rm ./curl_json_outputs/copo_csv_string*.txt.json
+# # remove all the intermediate files.
+# rm ./curl_json_outputs/copo_csv_string*.txt.json
 
 # now to (re)create the DToL_plant_collections.csv
 d=$(date +%Y-%m-%d)
@@ -62,17 +62,17 @@ printf "Getting county names. May take some time.\n"
 
 bash convert_lat_long.bash ../data/DToL_plant_collections_COPO_${d}.csv > ../data/lat_lon_county.tsv
 
-# clean-up
-rm ./sample_names.json
-# QC the bryophyte && angiosperm location information, comment the below lines out.
-# rm ./curl_json_outputs/angiosperms_*
-# rm ./curl_json_outputs/bryophytes_*
+# # clean-up
+# rm ./sample_names.json
+# # QC the bryophyte && angiosperm location information, comment the below lines out.
+# # rm ./curl_json_outputs/angiosperms_*
+# # rm ./curl_json_outputs/bryophytes_*
 
 ##                                      ##
 # Get the data from google sheets (curl) #
 ##                                      ##
 
-mkdir google_sheets_data && cd google_sheets_data
+mkdir -p google_sheets_data && cd google_sheets_data
 
 # angiosperms
 curl -L "https://docs.google.com/spreadsheets/d/e/2PACX-1vQnttoVuGLAaqVzqaCjb7Qyc7gKgSNCb7INVIDdS8X83S78nZ_szlHcOxpveueKSrDkRzlqmUGWmtHx/pub?gid=0&single=true&output=csv" \
@@ -104,5 +104,5 @@ cat <(echo "group,family,genus,species,date") all_${d}_collected.csv > ../data/a
 awk -F ","  'BEGIN {OFS=","} { if ($3 == "DTOL")  print $6 " "  $7,$19}' genome_sizes_${d}.csv > DTOL_genome_sizes_${d}.csv
 cat <(echo "species,GB") DTOL_genome_sizes_${d}.csv > ../data/DTOL_genome_sizes_final.csv
 
-# clean up all the intermediate files.
-rm all_${d}_collected.csv vascular_${d}.csv bryophytes_${d}.csv genome_sizes_${d}.csv bryophytes_${d}_collected.csv vascular_${d}_collected.csv DTOL_genome_sizes_${d}.csv
+# # clean up all the intermediate files.
+# rm all_${d}_collected.csv vascular_${d}.csv bryophytes_${d}.csv genome_sizes_${d}.csv bryophytes_${d}_collected.csv vascular_${d}_collected.csv DTOL_genome_sizes_${d}.csv
