@@ -39,7 +39,7 @@ jobs:
             -w /collections \
             dtolplantwg \
             Rscript ./R/parse_collections.R \
-              --lat_lon_data /data/lat_lon_county.tsv \
+              --lat_lon_data ./data/lat_lon_county.tsv \
               --input ./data/DToL_plant_collections_COPO_${d}.csv \
               --centoids ./data/centoids.csv
 
