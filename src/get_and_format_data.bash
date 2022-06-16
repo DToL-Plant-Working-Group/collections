@@ -2,12 +2,12 @@
 
 # remove old data
 
-# # COPO data
-# rm ../data/COPO_*
-# # google sheet latest collections
-# rm ../data/all_*
-# # genome sizes
-# rm ../data/DTOL_genome_sizes_*
+# COPO data
+rm ../data/COPO_*
+# google sheet latest collections
+rm ../data/all_*
+# genome sizes
+rm ../data/DTOL_genome_sizes_*
 
 ##                                   ##
 # Get the COPO data from the COPO API #
@@ -49,8 +49,8 @@ rm ./copo_strings/copo_csv_string*.txt
 
 node ./merge_jsons.js
 
-# # remove all the intermediate files.
-# rm ./curl_json_outputs/copo_csv_string*.txt.json
+# remove all the intermediate files.
+rm ./curl_json_outputs/copo_csv_string*.txt.json
 
 # now to (re)create the DToL_plant_collections.csv
 d=$(date +%Y-%m-%d)
@@ -62,11 +62,11 @@ printf "Getting county names. May take some time.\n"
 
 bash convert_lat_long.bash ../data/DToL_plant_collections_COPO_${d}.csv > ../data/lat_lon_county.tsv
 
-# # clean-up
-# rm ./sample_names.json
-# # QC the bryophyte && angiosperm location information, comment the below lines out.
-# # rm ./curl_json_outputs/angiosperms_*
-# # rm ./curl_json_outputs/bryophytes_*
+# clean-up
+rm ./sample_names.json
+# QC the bryophyte && angiosperm location information, comment the below lines out.
+# rm ./curl_json_outputs/angiosperms_*
+# rm ./curl_json_outputs/bryophytes_*
 
 ##                                      ##
 # Get the data from google sheets (curl) #
@@ -104,5 +104,5 @@ cat <(echo "group,family,genus,species,date") all_${d}_collected.csv > ../../dat
 awk -F ","  'BEGIN {OFS=","} { if ($3 == "DTOL")  print $6 " "  $7,$19}' genome_sizes_${d}.csv > DTOL_genome_sizes_${d}.csv
 cat <(echo "species,GB") DTOL_genome_sizes_${d}.csv > ../../data/DTOL_genome_sizes_final.csv
 
-# # clean up all the intermediate files.
-# rm all_${d}_collected.csv vascular_${d}.csv bryophytes_${d}.csv genome_sizes_${d}.csv bryophytes_${d}_collected.csv vascular_${d}_collected.csv DTOL_genome_sizes_${d}.csv
+# clean up all the intermediate files.
+rm all_${d}_collected.csv vascular_${d}.csv bryophytes_${d}.csv genome_sizes_${d}.csv bryophytes_${d}_collected.csv vascular_${d}_collected.csv DTOL_genome_sizes_${d}.csv
