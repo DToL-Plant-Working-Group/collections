@@ -168,7 +168,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                             (d) =>
                                 d.group === "Flowering plants" || // was Angiosperms
                                 d.group === "Conifers" || // Gymnosperms
-                                d.group === "Ferns & fern allies" // was Pteridophytes
+                                d.group === "Ferns & ferns allies" // was Pteridophytes
                         ).length,
                         Bryophytes: data_.filter((d) => d.group === "bryophyte").length // was Bryophytes
                     };
@@ -181,7 +181,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                                     (d) =>
                                         d.group === "Flowering plants" || // was Angiosperms
                                         d.group === "Conifers" || // Gymnosperms
-                                        d.group === "Ferns & fern allies" // was Pteridophytes
+                                        d.group === "Ferns & ferns allies" // was Pteridophytes
                                 )
                                 .map((d) => d.species)
                         ).size,
@@ -198,7 +198,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                                     (d) =>
                                         d.group === "Flowering plants" || // was Angiosperms
                                         d.group === "Conifers" || // Gymnosperms
-                                        d.group === "Ferns & fern allies" // was Pteridophytes
+                                        d.group === "Ferns & ferns allies" // was Pteridophytes
                                 )
                                 .map((d) => d.genus)
                         ).size,
@@ -215,7 +215,7 @@ d3.json("../data/uk.json").then(function (ukCounties, JSONerror) {
                                     (d) =>
                                         d.group === "Flowering plants" || // was Angiosperms
                                         d.group === "Conifers" || // Gymnosperms
-                                        d.group === "Ferns & fern allies" // was Pteridophytes
+                                        d.group === "Ferns & ferns allies" // was Pteridophytes
                                 )
                                 .map((d) => d.family)
                         ).size,
