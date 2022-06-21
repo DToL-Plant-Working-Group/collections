@@ -35,12 +35,12 @@ jobs:
 
       - run: |
           cd $GITHUB_WORKSPACE
-          docker build -t dtolplantwg R
+          docker pull genomehubs/r-ver
           docker run --rm --user $UID:$GROUPS \
             -v $GITHUB_WORKSPACE:/collections \
             -v $HOME/.local://.local \
             -w /collections \
-            dtolplantwg \
+            genomehubs/r-ver \
             Rscript ./R/parse_collections.R \
               --lat_lon_data ./data/lat_lon_county.tsv \
               --input ./data/DToL_plant_collections_COPO_${d}.csv \
