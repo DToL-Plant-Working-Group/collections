@@ -416,6 +416,9 @@ Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Westmorland,,,Lamiales,Orobanchacea
 ,,,,Cumberland,,,,,,,,54.45991,-3.2152338,
 ,,,,Westmorland,,,,,,,,54.501465,-3.006297,
 ,,,,Westmorland,,,,,,,,54.503838,-3.0021858,
+Primula,Primulaceae,Ericales,Angiosperms,North-west Yorkshire,,,Ericales,Primulaceae,Primula,Primula farinosa,DMR189,54.649868,-2.2365537,2022-05-17
+Sabulina,Caryophyllaceae,Caryophyllales,Angiosperms,North-west Yorkshire,,,Caryophyllales,Caryophyllaceae,Sabulina,Sabulina verna,DMR191,54.649895,-2.2369723,2022-05-17
+,,,,North-west Yorkshire,,,,,,,,54.65003,-2.2369885,
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,County Durham,,,Lamiales,Orobanchaceae,Euphrasia,Euphrasia nemorosa,E4E0043-6,54.84181,-1.6034673,2015-06-01
 ,,,,Dumfries and Galloway,55.012952,-4.118686,,,,,,54.992085,-4.513329,
 ,,,,Dumfries and Galloway,55.012952,-4.118686,,,,,,54.992897,-4.51945,
@@ -435,6 +438,7 @@ Euphrasia,Orobanchaceae,Lamiales,Angiosperms,County Durham,,,Lamiales,Orobanchac
 Trilophozia,Lophoziaceae,Undeter_peristomate_moss,Bryophytes,Dumfries and Galloway,55.012952,-4.118686,Jungermanniales,Lophoziaceae,Trilophozia,Trilophozia quinquedentata,DBELL1461,55.410084,-3.350214,2020-10-16
 Apopellia,,,Bryophytes,Dumfries and Galloway,55.012952,-4.118686,Pelliales,Pelliaceae,Apopellia,Apopellia endiviifolia,DBELL1518,55.415295,-3.343835,2021-04-22
 Mesoptychia,Mesoptychiaceae,Undeter_peristomate_moss,Bryophytes,Dumfries and Galloway,55.012952,-4.118686,Jungermanniales,Jungermanniaceae,Mesoptychia,Mesoptychia bantriensis,DBELL1517,55.415295,-3.343835,2021-04-22
+Mimulus,Phrymaceae,Lamiales,Angiosperms,Lanarkshire,55.6208266010381,-3.81479389639492,Lamiales,Phrymaceae,Mimulus,Mimulus peregrinus,P553-3,55.42366,-3.73493,2022-03-14
 ,,,,Dumfries and Galloway,55.012952,-4.118686,,,,,,55.432915,-3.3069377,
 ,,,,Dumfries and Galloway,55.012952,-4.118686,,,,,,55.433224,-3.3176157,
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.443054,-3.3529723,
@@ -457,6 +461,7 @@ Conocephalum,Conocephalaceae,Undetermined_liverwort_order,Bryophytes,Peeblesshir
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.60278,-3.3225,
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.603054,-3.3180556,
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.63047,-3.2913969,
+Erythranthe,,,,Berwickshire,55.564137,-2.746408,Lamiales,Phrymaceae,Erythranthe,Erythranthe lutea,P554-3,55.65495,-2.240085,2022-03-14
 ,,,,Ayrshire,55.4264281662581,-4.46947284867619,,,,,,55.658504,-4.6772184,
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.691677,-3.213138,
 ,,,,Peeblesshire,55.564137,-2.746408,,,,,,55.725185,-3.205271,
@@ -482,7 +487,13 @@ Daphne,Thymelaeaceae,Malvales,Angiosperms,Midlothian,55.907982,-3.087434,Malvale
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.833244,-3.0345972,
 ,,,,Clyde Islands,55.6679612234998,-5.22680889514217,,,,,,55.83658,-5.1283126,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.83824,-3.0346925,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.8408,-3.0593843,
+Aegopodium,Apiaceae,Apiales,Angiosperms,Midlothian,55.907982,-3.087434,Apiales,Apiaceae,Aegopodium,Aegopodium podagraria,DMR172,55.840824,-3.0354638,2022-04-24
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.84093,-3.0608094,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.84108,-3.0684304,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.8418,-3.0620625,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.84208,-3.063236,
+Cardamine,Brassicaceae,Brassicales,Angiosperms,Midlothian,55.907982,-3.087434,Brassicales,Brassicaceae,Cardamine,Cardamine hirsuta,DMR158,55.84297,-3.03663,2022-03-21
 Malus,Rosaceae,Rosales,Angiosperms,Midlothian,55.907982,-3.087434,Rosales,Rosaceae,Malus,Malus domestica,MyBRAE,55.84297,-3.03663,2021-06-03
 Angelica,Apiaceae,Apiales,Angiosperms,Midlothian,55.907982,-3.087434,Apiales,Apiaceae,Angelica,Angelica archangelica,DMR42,55.84297,-3.03663,2021-06-11
 Trifolium,Fabaceae,Fabales,Angiosperms,Midlothian,55.907982,-3.087434,Fabales,Fabaceae,Trifolium,Trifolium dubium,DMR116,55.84297,-3.03663,2021-08-11
@@ -490,21 +501,35 @@ Trifolium,Fabaceae,Fabales,Angiosperms,Midlothian,55.907982,-3.087434,Fabales,Fa
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.848232,-3.124976,
 Medicago,Fabaceae,Fabales,Angiosperms,Midlothian,55.907982,-3.087434,Fabales,Fabaceae,Medicago,Medicago lupulina,DMR90,55.849033,-3.0261946,2021-07-30
 Sonchus,Asteraceae,Asterales,Angiosperms,Midlothian,55.907982,-3.087434,Asterales,Asteraceae,Sonchus,Sonchus asper,DMR105,55.849033,-3.0262585,2021-08-06
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.85218,-3.161574,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.853085,-3.161601,
 Betula,Betulaceae,Fagales,Angiosperms,Midlothian,55.907982,-3.087434,Fagales,Betulaceae,Betula,Betula pubescens,DMR7,55.85342,-3.162611,2021-04-28
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.85348,-3.1634657,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.853615,-3.1628628,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.85364,-3.1635344,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.854324,-2.986606,
+Ranunculus,Ranunculaceae,Ranunculales,Angiosperms,Midlothian,55.907982,-3.087434,Ranunculales,Ranunculaceae,Ranunculus,Ranunculus repens,DMR200,55.854385,-2.9871187,2022-05-23
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.854816,-2.986203,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.854877,-2.990454,
 Ribes,Grossulariaceae,Saxifragales,Angiosperms,Midlothian,55.907982,-3.087434,Saxifragales,Grossulariaceae,Ribes,Ribes rubrum,DMR4,55.85515,-2.987308,2021-04-27
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.8553,-3.1556284,
 Angelica,Apiaceae,Apiales,Angiosperms,Midlothian,55.907982,-3.087434,Apiales,Apiaceae,Angelica,Angelica sylvestris,DMR95,55.855453,-2.9860914,2021-07-30
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.855556,-3.1533334,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.855923,-2.9860873,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.856575,-3.1520417,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.85659,-2.988804,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.85661,-2.989747,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.857224,-3.1516666,
 Juglans,Juglandaceae,Fagales,Angiosperms,Midlothian,55.907982,-3.087434,Fagales,Juglandaceae,Juglans,Juglans regia,DMR26,55.85728,-2.99525,2021-06-03
+Potentilla,Rosaceae,Rosales,Angiosperms,Midlothian,55.907982,-3.087434,Rosales,Rosaceae,Potentilla,Potentilla sterilis,DMR160,55.857533,-2.9878535,2022-04-04
 Vinca,Apocynaceae,Gentianales,Angiosperms,Midlothian,55.907982,-3.087434,Gentianales,Apocynaceae,Vinca,Vinca minor,DMR1,55.85763,-2.995792,2021-06-11
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.85799,-2.9866989,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.858356,-2.9868839,
 Aesculus,Sapindaceae,Sapindales,Angiosperms,Midlothian,55.907982,-3.087434,Sapindales,Sapindaceae,Aesculus,Aesculus hippocastanum,DMR2,55.85879,-2.990978,2021-04-27
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.859238,-2.990453,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.85965,-3.1977925,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.859695,-2.9857676,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.860016,-2.987581,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.861977,-2.9907942,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.863167,-2.9910963,
 ,,,,Berwickshire,55.564137,-2.746408,,,,,,55.86326,-2.299126,
@@ -512,10 +537,13 @@ Aesculus,Sapindaceae,Sapindales,Angiosperms,Midlothian,55.907982,-3.087434,Sapin
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.86364,-2.9925303,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.863766,-2.9938757,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.86396,-2.9928262,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.86404,-2.9931955,
 Sanicula,Apiaceae,Apiales,Angiosperms,Midlothian,55.907982,-3.087434,Apiales,Apiaceae,Sanicula,Sanicula europaea,DMR100,55.864056,-2.9945862,2021-08-02
 Galium,Rubiaceae,Gentianales,Angiosperms,Midlothian,55.907982,-3.087434,Gentianales,Rubiaceae,Galium,Galium odoratum,DMR101,55.864056,-2.9945862,2021-08-02
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.86438,-2.9945943,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.86439,-2.9952018,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.866936,-3.3155658,
+,,,,Berwickshire,55.564137,-2.746408,,,,,,55.87334,-2.0820704,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.896946,-3.1032917,
 Malus,Rosaceae,Rosales,Angiosperms,East Lothian,55.9459201493332,-2.72697188954985,Rosales,Rosaceae,Malus,Malus sylvestris,BOL1,55.906696,-2.7976513,2021-04-29
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,55.908024,-2.7968469,
@@ -525,6 +553,12 @@ Malus,Rosaceae,Rosales,Angiosperms,East Lothian,55.9459201493332,-2.726971889549
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,55.909622,-2.7980633,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,55.914734,-2.9592297,
 Malus,Rosaceae,Rosales,Angiosperms,East Lothian,55.9459201493332,-2.72697188954985,Rosales,Rosaceae,Malus,Malus sylvestris,ORM1,55.91792,-2.940256,2021-04-29
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.918793,-3.1866872,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.919003,-3.1833496,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.919132,-3.1829374,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.91957,-3.1840389,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.923237,-3.1888394,
+,,,,Midlothian,55.907982,-3.087434,,,,,,55.92498,-3.1961105,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.93832,-3.153153,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,55.939747,-2.6335301,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,55.940845,-2.634973,
@@ -540,6 +574,7 @@ Malus,Rosaceae,Rosales,Angiosperms,East Lothian,55.9459201493332,-2.726971889549
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.964092,-3.202813,
 Hedera,Araliaceae,Apiales,Angiosperms,Midlothian,55.907982,-3.087434,Apiales,Araliaceae,Hedera,Hedera helix,DBELL1481,55.964226,-3.20208,2020-11-23
 Erica,Ericaceae,Ericales,Angiosperms,Midlothian,55.907982,-3.087434,Ericales,Ericaceae,Erica,Erica cinerea,DMR89,55.964363,-3.2046146,2021-07-14
+Valerianella,Caprifoliaceae,Dipsacales,Angiosperms,Midlothian,55.907982,-3.087434,Dipsacales,Caprifoliaceae,Valerianella,Valerianella locusta,DMR177,55.964397,-3.2047598,2022-04-27
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.964397,-3.2046638,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.96446,-3.2047458,
 ,,,,Midlothian,55.907982,-3.087434,,,,,,55.96523,-3.2091668,
@@ -580,15 +615,22 @@ Malus,Rosaceae,Rosales,Angiosperms,Midlothian,55.907982,-3.087434,Rosales,Rosace
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.0144,-2.8497548,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.014446,-2.849836,
 Suaeda,Amaranthaceae,Caryophyllales,Angiosperms,East Lothian,55.9459201493332,-2.72697188954985,Caryophyllales,Chenopodiaceae,Suaeda,Suaeda maritima,DMR146,56.015163,-2.8501565,2021-09-05
+,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.015877,-2.8499315,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.016113,-2.8530807,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.016125,-2.8528564,
+,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.0208,-2.840382,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.021034,-2.8405955,
 Utricularia,Lentibulariaceae,Lamiales,Angiosperms,East Lothian,55.9459201493332,-2.72697188954985,Lamiales,Lentibulariaceae,Utricularia,Utricularia vulgaris,DMR5,56.02184,-2.857214,2021-04-27
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.02347,-2.8572378,
+,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.0235,-2.8428793,
+Cerastium,Caryophyllaceae,Caryophyllales,Angiosperms,East Lothian,55.9459201493332,-2.72697188954985,Caryophyllales,Caryophyllaceae,Cerastium,Cerastium arvense,DMR175,56.023808,-2.8435278,2022-04-26
+,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.02391,-2.8427598,
+,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.02392,-2.857296,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.025093,-2.8718743,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.025913,-2.8598273,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.026863,-2.8627365,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.02714,-2.8694496,
+,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.02718,-2.867525,
 ,,,,East Lothian,55.9459201493332,-2.72697188954985,,,,,,56.027214,-2.869387,
 Atriplex,Amaranthaceae,Caryophyllales,Angiosperms,"",,,Caryophyllales,Chenopodiaceae,Atriplex,Atriplex littoralis,DMR126,56.035156,-2.8655534,2021-08-18
 Tripleurospermum,Asteraceae,Asterales,Angiosperms,East Lothian,55.9459201493332,-2.72697188954985,Asterales,Asteraceae,Tripleurospermum,Tripleurospermum maritimum,DMR148,56.036945,-2.864149,2021-09-05
@@ -607,6 +649,7 @@ Euphrasia,Orobanchaceae,Lamiales,Angiosperms,East Lothian,55.9459201493332,-2.72
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.176537,-4.3714,
 ,,,,Fifeshire,,,,,,,,56.176838,-3.3790977,
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.1779,-4.278015,
+,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.187035,-3.965042,
 ,,,,Stirlingshire,56.1163859338532,-4.01043694455425,,,,,,56.24588,-4.6861634,
 ,,,,Stirlingshire,56.1163859338532,-4.01043694455425,,,,,,56.248825,-4.6852236,
 ,,,,Perthshire,56.3840067264711,-4.08191189462402,,,,,,56.26666,-4.422704,
@@ -682,4 +725,5 @@ Kalmia,Ericaceae,Ericales,Angiosperms,Inverness-shire,57.2152315356251,-4.704068
 ,,,,West Sutherland,,,,,,,,58.342777,-5.149936,
 ,,,,"",,,,,,,,59.138157,-3.3120427,
 ,,,,"",,,,,,,,59.513855,-1.650254,
+Erythranthe,,,,Zetland,,,Lamiales,Phrymaceae,Erythranthe,Erythranthe guttata,10-QUA-65-1,60.10456,-1.2268,2022-03-14
 Euphrasia,Orobanchaceae,Lamiales,Angiosperms,Zetland,,,Lamiales,Orobanchaceae,Euphrasia,Euphrasia marshallii x Euphrasia micrantha,E4E0099-3,60.132645,-2.053932,2015-06-01
